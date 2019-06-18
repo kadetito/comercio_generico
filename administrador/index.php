@@ -23,30 +23,21 @@ require ("includes/sesion.php");
 //     require (ROOT_DIR.'/clases/settings.class.php');
 //     //datosUsuarioLogeado
 //     require (ROOT_DIR.'/clases/usuario.class.php');
-//     //login
-//     require (ROOT_DIR.'/clases/login.class.php');
-//     //provincias
-//     require (ROOT_DIR.'/clases/provincias.class.php');
-// require (ROOT_DIR.'/clases/fotos_consulta_simple.class.php');
+
+
+     require (ROOT_DIR.'/clases/tienda.php');
+     require (ROOT_DIR.'/clases/idiomas.php');
+     require (ROOT_DIR.'/clases/cliente.php');
+     require (ROOT_DIR.'/clases/formaspago.php');
+     require (ROOT_DIR.'/clases/tipostienda.php');
+     require (ROOT_DIR.'/clases/host.php');
+     require (ROOT_DIR.'/clases/modalidades.php');
+     require (ROOT_DIR.'/clases/estructuras.php');
+
 // //WORKERS----------------------------------------------------------  
 //     //settings
-//     require (ROOT_DIR.'/workers/settings.worker.php');
-//     //datosUsuario logeado
-//     require (ROOT_DIR.'/workers/usuarios.worker.php');
-//     //login
-//     require (ROOT_DIR.'/workers/login.worker.php');
-//     //provincias
-//     require (ROOT_DIR.'/workers/provincias.worker.php');
+    require (ROOT_DIR.'/workers/index.worker.php');
 
-    //si la sesion de usuario esta iniciada, me salto el index y voy al home
-    //obteniendo antes la provincia que el usuario eligio
-    //cuando se dio de alta, que obtengo del worker usuarios
-//     if(($sesion == 1) && !isset($aliasprovincia)){
-//          header('Location: '.BASE_URL.'/'.$lengua.'/'.$aliasProvincia.'');
-
-//     } else {
-//         //header('Location: '.BASE_URL.'/'.$lengua.'');
-//     }
 
 //$smarty->assign("paginador",$paginador,true); 
  

@@ -11,10 +11,10 @@
  class Conexion extends PDO { //extends usa la libreria php PDO que no necesita ser incluida desde PHP5
  	//declaro las variables como privadas
    private $tipo_de_base = 'mysql';
-   private $host = 'db775859424.hosting-data.io';
-   private $bbdd = 'db775859424';
-   private $usuario = 'dbo775859424';
-   private $contrasena = 'JRK441e22'; 
+   private $host = 'localhost';
+   private $bbdd = 'generica_comercio';
+   private $usuario = 'root';
+   private $contrasena = '12345678'; 
 
 
 //   private $usuario = 'root';

@@ -1,28 +1,3 @@
-<?php
-/* Smarty version 3.1.33, created on 2019-06-17 23:56:48
-  from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.33',
-  'unifunc' => 'content_5d080ca0524f18_13666557',
-  'has_nocache_code' => true,
-  'file_dependency' => 
-  array (
-    '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
-    array (
-      0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1560808538,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5d080ca0524f18_13666557 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1856746445d080ca04d2e46_66958589';
-?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -35,18 +10,10 @@ $_smarty_tpl->compiled->nocache_hash = '1856746445d080ca04d2e46_66958589';
         <link rel="stylesheet" href="estilos/jquery.steps.css">
         <link rel="stylesheet" href="estilos/checks.css">
         <link rel="stylesheet" href="estilos/radios.css">
-		<?php echo '<script'; ?>
- src='https://code.jquery.com/jquery-2.2.4.min.js'><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js"><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src="javascript/bootstrap.min.js"><?php echo '</script'; ?>
->
+		<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js"></script>
+		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+		<script src="javascript/bootstrap.min.js"></script>
     </head>
     <body>
 <div class="container">
@@ -61,16 +28,12 @@ $_smarty_tpl->compiled->nocache_hash = '1856746445d080ca04d2e46_66958589';
             
             <select id="id_tipotienda" name="id_tipotienda" class="form-control required">
             <option value="">Seleccione el tipo de comercio</option>
-            <?php echo '/*%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
-/*/%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/';?>
-
+            {$bucleTiposTiendaCheckbox}
             </select>
         <h4>Idiomas</h4>
         <div class="form-group idioms">
 			<ul class="unstyled centered">
-            <?php echo '/*%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
-/*/%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/';?>
-
+            {$bucleIdiomasCheckbox}
             </ul>
          </div>
          <div class="form-group">
@@ -94,13 +57,9 @@ $_smarty_tpl->compiled->nocache_hash = '1856746445d080ca04d2e46_66958589';
         <h3>Características</h3>
         <section>
         <h4>Escoje qué características tendrán los productos de la tienda</h4>
-        <?php echo '/*%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
-/*/%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/';?>
-
+        {$bucleModalidadesCheckbox}
         <h4>Escoje los tipos de pago que usarás</h4>
-        <?php echo '/*%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
-/*/%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/';?>
-
+        {$bucleTiposPagoCheckbox}
 
         </section>
         <h3>Dominio y redirección</h3>
@@ -114,15 +73,11 @@ $_smarty_tpl->compiled->nocache_hash = '1856746445d080ca04d2e46_66958589';
         <section>
          <div class="form-group">
         <p>(listar todas las estructuras home, landing, detalle, contacto etc...)</p>
-			<?php echo '/*%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
-/*/%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/';?>
-
+			{$bucleEstructurasCheckbox}
          </div>
           <div class="form-group">
           <p>según estructura se cargan via AJAX los estilos de esa estructura)</p>
-			<?php echo '/*%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstilosCheckbox\']->value;?>
-/*/%%SmartyNocache:1856746445d080ca04d2e46_66958589%%*/';?>
-
+			{$bucleEstilosCheckbox}
           </div>
          </section>
         <h3>Finish</h3>
@@ -133,18 +88,9 @@ $_smarty_tpl->compiled->nocache_hash = '1856746445d080ca04d2e46_66958589';
 </form>
 </div>
 
-		<?php echo '<script'; ?>
- src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js'><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src='javascript/jquery.steps.min.js'><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src="javascript/steps_form.js"><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src="javascript/jquery.cookie-1.3.1.js"><?php echo '</script'; ?>
->
+		<script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js'></script>
+		<script src='javascript/jquery.steps.min.js'></script>
+		<script src="javascript/steps_form.js"></script>
+		<script src="javascript/jquery.cookie-1.3.1.js"></script>
     </body>
-</html><?php }
-}
+</html>
