@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-17 23:56:48
+/* Smarty version 3.1.33, created on 2019-06-25 01:09:33
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d080ca0544280_99030113',
+  'unifunc' => 'content_5d11582db44589_55852353',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1560808538,
+      1 => 1561417767,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d080ca0544280_99030113 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d11582db44589_55852353 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="utf-8">
@@ -35,6 +35,39 @@ function content_5d080ca0544280_99030113 (Smarty_Internal_Template $_smarty_tpl)
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js"></script>
 		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 		<script src="javascript/bootstrap.min.js"></script>
+				<script>
+				
+				
+				$(document).ready(function() {
+
+					$("input:radio[name=id_estructura]").click(function() {
+						alert();
+					})
+
+				})
+					
+// 		$(document).ready(function()
+// 				{
+// 				    $("input[name=id_estructura]").click(function () { 
+
+
+// 		  if (!this.checked) {
+// 		    return false;
+// 		  }
+
+// 		  $.ajax({
+// 		      type: 'POST',
+// 		      url: 'index.php',
+// 		      data: {
+// 		        idForma: this.value
+// 		      }
+// 		    })
+// 		    .done(function(res) {
+// 		        $('#formaPagoCont').html(res);
+// 		    });
+// 		});
+// 				});
+		</script>
     </head>
     <body>
 <div class="container">
@@ -63,7 +96,7 @@ function content_5d080ca0544280_99030113 (Smarty_Internal_Template $_smarty_tpl)
             <label for="usuario_cliente">Nombre de usuario (para administrar la tienda)</label>
             <input id="usuario_cliente" name="usuario_cliente" type="text" class="required">
             <label for="password_cliente">Password</label>
-            <input id="password_cliente" name="password_cliente" type="text" class="required">
+            <input id="password_cliente" name="password_cliente" type="text" class="required password">
             </div>
         </section>
         <h3>Perfil usuario</h3>
@@ -89,23 +122,68 @@ function content_5d080ca0544280_99030113 (Smarty_Internal_Template $_smarty_tpl)
         </section>
         <h3>Dominio y redirección</h3>
         <section>
-            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text" value="" />
-            <label for="protocolo_preferente">Protocolo preferente</label><input id="protocolo_preferente" name="protocolo_preferente" type="text" value="" />
-            <label for="usowww">Uso de www.</label><input id="usowww" name="usowww" type="text" value="" />
-            <label for="friendly">Friendly URL</label><input id="friendly" name="friendly" type="text" value="" />
+            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text" value="" class="required" />
+            <label for="protocolo_preferente">Protocolo preferente</label>
+            <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
+				<option value="http://">http://</option>
+				<option value="https://">https://</option>
+			</select>
+
+<div class="row">
+<div class="col-md-6">
+
+<p>&nbsp;</p>
+<p>Uso de www.</p>
+<p>
+<label class="containerradio" for="usowww1">Si
+   <input id="usowww1" class="styled-checkbox required" name="usowww" type="radio" value="S">
+   <span class="checkmarkr"></span>
+</label>
+<label class="containerradio" for="usowww2">No
+   <input id="usowww2" class="styled-checkbox required" name="usowww" type="radio" value="N">
+   <span class="checkmarkr"></span>
+</label>
+</p>           
+</div>
+
+<div class="col-md-6">
+<p>&nbsp;</p>
+<p>Friendly URL</p>
+<p>
+<label class="containerradio" for="friendly1">Si
+   <input id="friendly1" class="styled-checkbox required" name="friendly" type="radio" value="S">
+   <span class="checkmarkr"></span>
+</label>
+<label class="containerradio" for="friendly2">No
+   <input id="friendly2" class="styled-checkbox required" name="friendly" type="radio" value="N">
+   <span class="checkmarkr"></span>
+</label>
+</p>     
+</div>
+</div>
+
          </section>
            <h3>Estructura</h3>
         <section>
-         <div class="form-group">
-        <p>(listar todas las estructuras home, landing, detalle, contacto etc...)</p>
+        
+<div class="row">
+<div class="col-md-4"></div>
+</div>        
+        
+        
+
 			<?php echo $_smarty_tpl->tpl_vars['bucleEstructurasCheckbox']->value;?>
 
-         </div>
-          <div class="form-group">
-          <p>según estructura se cargan via AJAX los estilos de esa estructura)</p>
-			<?php echo $_smarty_tpl->tpl_vars['bucleEstilosCheckbox']->value;?>
+        
 
-          </div>
+<!-- 			<?php echo $_smarty_tpl->tpl_vars['bucleEstilosCheckbox']->value;?>
+ -->
+        
+         <div id="formaPagoCont"><?php echo $_smarty_tpl->tpl_vars['bucleEstilosCheckbox']->value;?>
+</div>
+          
+          
+          
          </section>
         <h3>Finish</h3>
         <section>
@@ -119,6 +197,7 @@ function content_5d080ca0544280_99030113 (Smarty_Internal_Template $_smarty_tpl)
 		<script src='javascript/jquery.steps.min.js'></script>
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
+
     </body>
 </html><?php }
 }

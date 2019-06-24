@@ -14,27 +14,28 @@ class Tienda {
     
     //defino las propiedades
     private $id_tienda;
-    
+    private $id_tipotienda = 0;
+    private $tienda_nombre = 0;
     const TABLA = 'generica_tienda'; //constante del nombre de la tabla
     
     //metodos getters y setters
-    public function getId(){
+    public function getIdTienda(){
         return $this->id_tienda;
     }
-    public function getNombre(){
+    public function getNombreTienda(){
         return $this->tienda_nombre;
     }
-    public function getTipoTienda(){
+    public function getTipoTiendaTienda(){
         return $this->id_tipotienda;
     }
     
-    public function setId(){
+    public function setIdTienda(){
         $this->id_tienda = $id_tienda;
     }
-    public function setNombre(){
+    public function setNombreTienda(){
         $this->tienda_nombre = $tienda_nombre;
     }
-    public function setTipoTienda(){
+    public function setTipoTiendaTienda(){
         $this->id_tipotienda = $id_tipotienda;
     }
     
@@ -85,38 +86,38 @@ class Tienda {
     }
     
     
-    //**----------------------------
-    // UPDATE TOTAL
-    // actualiza todo el registro
-    //**---------------------
+//     //**----------------------------
+//     // UPDATE TOTAL
+//     // actualiza todo el registro
+//     //**---------------------
     
-    public static function updateTotalRegistro($setCateAlias,$tagsSetCategoria,$setDesAlias,$setCateTitulo,$setId_cate){
-        function limpiaEspacios($cadena){
-            $cadena = str_replace(' ', '', $cadena);
-            return strtolower($cadena);
-        }
-        $conexion = new Conexion();
-        $conexion->exec("SET NAMES 'utf8'");
-        $setCateTituloParseado = limpiaEspacios($setCateTitulo);
-        $setCateTituloFiltrado = filtrourl($setCateTituloParseado);
-        $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET
-                    nombre_categoria  = :setCateTitulo,
-                    alias_categoria  = :setCateAlias,
-                    descripcion_categoria = :tagsSetCategoria,
-                    tags_categoria = :setDesAlias
-                       WHERE id_cate = :setId_cate');
-        $consulta->bindParam(':setCateTitulo',$setCateTitulo);
-        if(isset($setCateAlias)){
-            $consulta->bindParam(':setCateAlias', $setCateTituloFiltrado);
-        } else {
-            $consulta->bindParam(':setCateAlias', $setCateAlias);
-        }
-        $consulta->bindParam(':setDesAlias', $setDesAlias);
-        $consulta->bindParam(':tagsSetCategoria', $tagsSetCategoria);
-        $consulta->bindParam(':setId_cate', $setId_cate);
-        $consulta->execute();
-        $conexion = null; //cierro conexion
-    }
+//     public static function updateTotalRegistro($setCateAlias,$tagsSetCategoria,$setDesAlias,$setCateTitulo,$setId_cate){
+//         function limpiaEspacios($cadena){
+//             $cadena = str_replace(' ', '', $cadena);
+//             return strtolower($cadena);
+//         }
+//         $conexion = new Conexion();
+//         $conexion->exec("SET NAMES 'utf8'");
+//         $setCateTituloParseado = limpiaEspacios($setCateTitulo);
+//         $setCateTituloFiltrado = filtrourl($setCateTituloParseado);
+//         $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET
+//                     nombre_categoria  = :setCateTitulo,
+//                     alias_categoria  = :setCateAlias,
+//                     descripcion_categoria = :tagsSetCategoria,
+//                     tags_categoria = :setDesAlias
+//                        WHERE id_cate = :setId_cate');
+//         $consulta->bindParam(':setCateTitulo',$setCateTitulo);
+//         if(isset($setCateAlias)){
+//             $consulta->bindParam(':setCateAlias', $setCateTituloFiltrado);
+//         } else {
+//             $consulta->bindParam(':setCateAlias', $setCateAlias);
+//         }
+//         $consulta->bindParam(':setDesAlias', $setDesAlias);
+//         $consulta->bindParam(':tagsSetCategoria', $tagsSetCategoria);
+//         $consulta->bindParam(':setId_cate', $setId_cate);
+//         $consulta->execute();
+//         $conexion = null; //cierro conexion
+//     }
     
     
     
@@ -132,21 +133,28 @@ class Tienda {
         $consulta->bindParam(':id_tipotienda', $this->id_tipotienda);
         $consulta->bindParam(':tienda_nombre',  $this->tienda_nombre);        
         $consulta->execute();
-        $this->id= $conexion->lastInsertId();
+        $this->id_tienda= $conexion->lastInsertId();        
+        //devuelvo el ID del registro
+        $registros = $conexion->lastInsertId();        
+        return $registros;
+        
     }
     
+
     
+
+  
     
-    public function eliminarRegistroCat($id_cate){
-        //                echo '<script>alert("hola")</script>';
-        $conexion = new Conexion();
-        if($id_cate) {
-            $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA .'  WHERE id_cate = :id_cate');
-            $consulta->bindParam(':id_cate', $id_cate);
-            $consulta->execute();
-        }
-        $conexion = null; //cierro conexion
-    }
+//     public function eliminarRegistroCat($id_cate){
+//         //                echo '<script>alert("hola")</script>';
+//         $conexion = new Conexion();
+//         if($id_cate) {
+//             $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA .'  WHERE id_cate = :id_cate');
+//             $consulta->bindParam(':id_cate', $id_cate);
+//             $consulta->execute();
+//         }
+//         $conexion = null; //cierro conexion
+//     }
     
     
     

@@ -6,7 +6,27 @@ $(document).ready(function(){
 	    rules: {
 	        confirm: {
 	            equalTo: "#password"
-	        }
+	        },
+	    usuario_cliente: {
+	        required: true,
+	        minlength: 3
+	      },
+	    password_cliente: {
+	        required: true,
+	        minlength: 6
+	      },
+	    dni_cliente: {
+	        required: true,
+	        minlength: 9,
+	        maxlength: 9
+	      },
+
+	    email_cliente: {
+	        required: true,
+	        email: true
+	      }	 
+	    	   
+	    
 	    }
 	});
 	
@@ -36,35 +56,69 @@ $(document).ready(function(){
 	    onFinished: function (event, currentIndex)
 	    {
 
-	             $.ajax({
-	                 url: "index.php",
-	                 type: "POST",
-	                 success: function (response) {
-	                     // Form fields on second step
-	                     $("#accion").val(response.accion);
-	                     $("#tienda_nombre").val(response.tienda_nombre);
-	                     $("#id_tipotienda").val(response.id_tipotienda);
-	                     $("#id_locale").val(response.id_locale);
-	                     $("#usuario_cliente").val(response.usuario_cliente);
-	                     $("#password_cliente").val(response.password_cliente);
-	                     $("#nombre_cliente").val(response.nombre_cliente);
-	                     $("#apellidos_cliente").val(response.apellidos_cliente);
-	                     $("#email_cliente").val(response.email_cliente);
-	                     $("#dni_cliente").val(response.dni_cliente);
-	                     $("#id_moda").val(response.id_moda);
-	                     $("#id_tipospago").val(response.id_tipospago);
-	                     $("#dominio").val(response.dominio);
-	                     $("#protocolo_preferente").val(response.protocolo_preferente);
-	                     $("#usowww").val(response.usowww);
-	                     $("#friendly").val(response.friendly);
-	                     $("#id_estructura").val(response.id_estructura);
-	                     alert('guardado');
-	                 }
-	             
-	             });
+	    	
+	    	//array idiomas
+	    	var idioms=[];
+	    	idioms.length=0;
+		    	    $('#contact input[name="id_locale[]"]').each ( function() {
+		    	    	if ($(this).is(':checked')) {
+		    	    		idioms.push($(this).val());
+		    	      }
+		    	    });
+		    var idiomas = JSON.stringify(idioms);
+	    	
+	    	//array modalidades
+	    	var modalis=[];
+	    	modalis.length=0;
+		    	    $('#contact input[name="id_moda[]"]').each ( function() {
+		    	    	if ($(this).is(':checked')) {
+		    	    		modalis.push($(this).val());
+		    	      }
+		    	    });
+		    var modalidades = JSON.stringify(modalis);
+		    
+	    	//array tipos de pagos
+	    	var tipgs=[];
+	    	tipgs.length=0;
+		    	    $('#contact input[name="id_tipospago[]"]').each ( function() {
+		    	    	if ($(this).is(':checked')) {
+		    	    		tipgs.push($(this).val());
+		    	      }
+		    	    });
+		    var tipospago = JSON.stringify(tipgs);
 
-	              $("#contact").submit();
-
+		    
+	  	    	$.ajax({
+		            type: "POST",
+		            dataType: 'JSON',
+		            data: { 
+		            	    'accion': $("#accion").val(),
+		                    'tienda_nombre': $("#tienda_nombre").val(),
+		                    'id_tipotienda': $("#id_tipotienda").val(),
+		                    'usuario_cliente': $("#usuario_cliente").val(),
+		                    'password_cliente': $("#password_cliente").val(),
+		                    'nombre_cliente': $("#nombre_cliente").val(),
+		                    'apellidos_cliente': $("#apellidos_cliente").val(),
+		                    'email_cliente': $("#email_cliente").val(),
+		                    'dni_cliente': $("#dni_cliente").val(),
+		                    'dominio': $("#dominio").val(),
+		                    'protocolo_preferente': $("#protocolo_preferente").val(),
+		                    'usowww': $("#usowww").val(),
+		                    'friendly': $("#friendly").val(),
+		                    'id_estructura': $("#id_estructura").val(),
+		                    'jsonIdiomas': idiomas,
+		                    'jsonModalidades': modalidades,
+		                    'jsonTipospago': tipospago
+		                  },
+		            url: "index.php",
+		            success : function(data) {
+		             alert('guardado');
+		            
+		             $("#contact").submit();
+		            }
+		        });
+	  	    	
+	  	    	
 
 	    }
 	})

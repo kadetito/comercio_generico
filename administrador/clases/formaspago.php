@@ -150,3 +150,158 @@ class Formaspago {
     
     
 }
+
+
+
+/**
+ * Tipos pago Generica
+ * @author kadet
+ *
+ */
+class TipospagoGenerica {
+    
+    //defino las propiedades
+    private $id_tipospago;
+    
+    const TABLA = 'generica_tipospago'; //constante del nombre de la tabla
+    //metodos getters y setters
+    public function getId(){
+        return $this->id_tipospago;
+    }
+    public function getTipago(){
+        return $this->id_tipago;
+    }
+    
+    public function getIdTienda(){
+        return $this->id_tienda;
+    }
+    
+    public function setId(){
+        $this->id_tipospago = $id_tipospago;
+    }
+    public function setTipago(){
+        $this->id_tipago = $id_tipago;
+    }
+    
+    public function setIdTienda(){
+        $this->id_tienda = $id_tienda;
+    }
+    
+    
+    
+    //constructor
+    public function __construct($id_tienda,$id_tipago,$id_tipospago=null)
+    {
+        $this->id_tipospago = $id_tipospago;
+        $this->id_tipago = $id_tipago;
+        $this->id_tienda = $id_tienda;
+        
+    }
+    
+    
+    /**
+     * CONSULTA SIN FORMATO
+     * devuelve los registros sin formato HTML ni paginador
+     * @return number[]
+     */
+    public static function consultaSinFormato(){
+        $conexion = new conexion();//objeto conexion
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM " . self::TABLA . "
+                          ORDER BY id_locale ASC
+                          ");//uso la constante TABLA
+        $consulta->execute();
+        $registros = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        $total = $conexion->query("SELECT FOUND_ROWS() as total")->fetch()['total'];
+        return [ $registros ];
+    }
+    
+    
+    
+    //**
+    // OBTENER DETALLE
+    // obtiene el detalle del registro pedido por url get
+    //**
+    public static function consultaDetalle($idrequest){
+        $conexion = new conexion();
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE id_cate = :id_cate ");
+        $consulta->execute(array(':id_cate' => $idrequest));
+        $registro = $consulta->fetch();
+        if($registro){
+            return new self($registro['alias_categoria'],$registro['descripcion_categoria'],$registro['tags_categoria'],$registro['nombre_categoria'],$idrequest);
+        } else {
+            return false;
+        }
+    }
+    
+    
+    //**----------------------------
+    // UPDATE TOTAL
+    // actualiza todo el registro
+    //**---------------------
+    
+    public static function updateTotalRegistro($setCateAlias,$tagsSetCategoria,$setDesAlias,$setCateTitulo,$setId_cate){
+        function limpiaEspacios($cadena){
+            $cadena = str_replace(' ', '', $cadena);
+            return strtolower($cadena);
+        }
+        $conexion = new Conexion();
+        $conexion->exec("SET NAMES 'utf8'");
+        $setCateTituloParseado = limpiaEspacios($setCateTitulo);
+        $setCateTituloFiltrado = filtrourl($setCateTituloParseado);
+        $consulta = $conexion->prepare('UPDATE ' . self::TABLA .' SET
+                    nombre_categoria  = :setCateTitulo,
+                    alias_categoria  = :setCateAlias,
+                    descripcion_categoria = :tagsSetCategoria,
+                    tags_categoria = :setDesAlias
+                       WHERE id_cate = :setId_cate');
+        $consulta->bindParam(':setCateTitulo',$setCateTitulo);
+        if(isset($setCateAlias)){
+            $consulta->bindParam(':setCateAlias', $setCateTituloFiltrado);
+        } else {
+            $consulta->bindParam(':setCateAlias', $setCateAlias);
+        }
+        $consulta->bindParam(':setDesAlias', $setDesAlias);
+        $consulta->bindParam(':tagsSetCategoria', $tagsSetCategoria);
+        $consulta->bindParam(':setId_cate', $setId_cate);
+        $consulta->execute();
+        $conexion = null; //cierro conexion
+    }
+    
+    
+    
+    //**----------------------------
+    // INSERT TOTAL
+    // inserta todo el registro
+    //**---------------------
+    public function inserTipospagoTienda(){
+        
+        $conexion = new Conexion();
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (id_tienda,id_tipago) VALUES (:id_tienda,:id_tipago)');
+        $consulta->bindParam(':id_tienda',  $this->id_tienda);
+        $consulta->bindParam(':id_tipago',  $this->id_tipago);
+        $consulta->execute();
+        $this->id= $conexion->lastInsertId();
+        
+        
+        
+    }
+    
+    
+    public function eliminarRegistroCat($id_cate){
+        //                echo '<script>alert("hola")</script>';
+        $conexion = new Conexion();
+        if($id_cate) {
+            $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA .'  WHERE id_cate = :id_cate');
+            $consulta->bindParam(':id_cate', $id_cate);
+            $consulta->execute();
+        }
+        $conexion = null; //cierro conexion
+    }
+    
+    
+    
+}
+

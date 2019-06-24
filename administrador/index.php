@@ -12,6 +12,7 @@ ini_set('display_errors', '1');
 
 //conexion a bbdd--------------------------------------------------
 require_once 'path.php';
+include 'ChromePhp.php';
 require_once ROOT_DIR.'/datos/conexion/conexion.php';
 //libreria smarty y variables de inicio----------------------------
 require ROOT_DIR.'/smarty/libs/Smarty.class.php';
@@ -26,6 +27,9 @@ require ("includes/sesion.php");
 
 
      require (ROOT_DIR.'/clases/tienda.php');
+     require (ROOT_DIR.'/clases/settingsuser.php');
+     require (ROOT_DIR.'/clases/settingshost.php');
+     require (ROOT_DIR.'/clases/settingsestructura.php');
      require (ROOT_DIR.'/clases/idiomas.php');
      require (ROOT_DIR.'/clases/cliente.php');
      require (ROOT_DIR.'/clases/formaspago.php');
