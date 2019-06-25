@@ -40,10 +40,10 @@ $protocolo_preferente = filter_input(INPUT_POST, 'protocolo_preferente');
 $usowww = filter_input(INPUT_POST, 'usowww');
 $friendly = filter_input(INPUT_POST, 'friendly');
 $id_estructura = filter_input(INPUT_POST, 'id_estructura');
-$idEstructuraInstant = filter_input(INPUT_POST, 'idForma');
+// $idEstructuraInstant = filter_input(INPUT_POST, 'idForma');
+$idEstructuraInstant = filter_input(INPUT_POST, 'elegido');
 
 
-ChromePhp::log($idEstructuraInstant);
     /**
      * OBTENGO BUCLE IDIOMAS
      * @var unknown $resultado
@@ -132,9 +132,36 @@ ChromePhp::log($idEstructuraInstant);
     
     //si recibo el parametreo id estructura en tiempo real via AJAX
     if(isset($idEstructuraInstant)){
-        
-        
-        
+    
+        ChromePhp::log($idEstructuraInstant);
+//     if ($elegido==1) {
+//         $bucleEstilosCheckbox = '
+// 	<option value="1">4</option>
+// 	<option value="2">5</option>
+// 	<option value="3">7</option>
+// 	<option value="4">21</option>
+// 	<option value="5">Scennic</option>
+// 	<option value="6">Traffic</option>
+// 	';
+//     }
+//     if ($elegido==2) {
+//         $bucleEstilosCheckbox = '
+// 	<option value="1">Ibiza</option>
+// 	<option value="2">Toledo</option>
+// 	<option value="3">Cordoba</option>
+// 	<option value="4">Arosa</option>
+// 	';
+//     }
+//     if ($elegido==3) {
+//         $bucleEstilosCheckbox = '
+// 	<option value="1">106</option>
+// 	<option value="2">206</option>
+// 	<option value="3">306</option>
+// 	';
+//     }
+
+
+      
         /**
          * OBTENGO BUCLE ESTILOS SEGUN ID ESTRUCTURA
          * @var unknown $resultado
@@ -151,7 +178,7 @@ ChromePhp::log($idEstructuraInstant);
         foreach($bucle_Estilos as $itemEstilos):
         $ii++;
         if($contadorEstilos!=''){
-            $bucleEstilosCheckbox.='<div class="col-md-'.$bootstrapColWidth.'"><div class="card mb-2"><div class="thumbnail "><img class="percent" src="assets/img/'.$itemEstilos['imagen_estilo'].'" alt="'.$itemEstilos['nombre_estilo'].'" /></div></div><label class="containerradio" for="id_estilo'.$ii.'">'.$itemEstilos['nombre_estilo'].' <input id="id_estilo'.$ii.'" class="styled-checkbox required" name="id_estilo" type="radio" value="'.$itemEstilos['id_estil'].'"><span class="checkmarkr"></span></label></div>';
+            $bucleEstilosCheckbox.='<div class="col-md-'.$bootstrapColWidth.'"><div class="card mb-2"><div class="thumbnail "><img class="percent" src="assets/img/'.$itemEstilos['imagen_estil'].'" alt="'.$itemEstilos['nombre_estil'].'" /></div></div><label class="containerradio" for="id_estilo'.$ii.'">'.$itemEstilos['nombre_estil'].' <input id="id_estilo'.$ii.'" class="styled-checkbox required" name="id_estilo" type="radio" value="'.$itemEstilos['id_estil'].'"><span class="checkmarkr"></span></label></div>';
             
             $rowCount++;
             if($rowCount % $numOfCols == 0) {
@@ -159,7 +186,7 @@ ChromePhp::log($idEstructuraInstant);
             }
         }
         endforeach;
-    }
+}
 
     
     

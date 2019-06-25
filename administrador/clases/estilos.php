@@ -28,7 +28,10 @@ class Estilos {
         return $this->id_estr_fk;
     }
     
-  
+    public function getImagen(){
+        return $this->imagen_estil;
+    }
+    
     public function setId(){
         $this->id_estil = $id_estil;
     }
@@ -38,13 +41,16 @@ class Estilos {
     public function setIdFk(){
         $this->id_estr_fk = $id_estr_fk;
     }
-    
+    public function setImagen(){
+        $this->imagen_estil = $imagen_estil;
+    }
     //constructor
-    public function __construct($id_estr_fk,$nombre_estil,$id_estil=null)
+    public function __construct($imagen_estil,$id_estr_fk,$nombre_estil,$id_estil=null)
     {
         $this->id_estil = $id_estil;
         $this->nombre_estil = $nombre_estil;
         $this->id_estr_fk = $id_estr_fk;
+        $this->imagen_estil = $imagen_estil;
     }
     
     
@@ -53,15 +59,15 @@ class Estilos {
      * devuelve los registros sin formato HTML ni paginador
      * @return number[]
      */
-    public static function consultaSinFormato(){
+    public static function consultaSinFormato($idEstructuraInstant){
         $conexion = new conexion();//objeto conexion
         $conexion->exec("SET NAMES 'utf8'");
         $consulta = $conexion->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM " . self::TABLA . " WHERE id_estr_fk = :idEstructuraInstant
-                          ORDER BY id_estil ASC
+                          ORDER BY id_estr_fk ASC
                           ");//uso la constante TABLA
-        $consulta->execute();
-        $consulta->execute(array(':idEstructuraInstant' => $idEstructuraInstant));
         
+        $consulta->bindParam(':idEstructuraInstant',$idEstructuraInstant);
+        $consulta->execute();
         $registros = $consulta->fetchAll(PDO::FETCH_ASSOC);
         $total = $conexion->query("SELECT FOUND_ROWS() as total")->fetch()['total'];
         return [ $registros ];

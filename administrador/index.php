@@ -37,7 +37,7 @@ require ("includes/sesion.php");
      require (ROOT_DIR.'/clases/host.php');
      require (ROOT_DIR.'/clases/modalidades.php');
      require (ROOT_DIR.'/clases/estructuras.php');
-
+     require (ROOT_DIR.'/clases/estilos.php');
 // //WORKERS----------------------------------------------------------  
 //     //settings
     require (ROOT_DIR.'/workers/index.worker.php');

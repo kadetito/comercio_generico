@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-25 01:09:33
+/* Smarty version 3.1.33, created on 2019-06-26 00:49:57
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d11582db44589_55852353',
+  'unifunc' => 'content_5d12a5155cdd11_14718509',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1561417767,
+      1 => 1561502966,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d11582db44589_55852353 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d12a5155cdd11_14718509 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="utf-8">
@@ -35,43 +35,12 @@ function content_5d11582db44589_55852353 (Smarty_Internal_Template $_smarty_tpl)
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js"></script>
 		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 		<script src="javascript/bootstrap.min.js"></script>
-				<script>
-				
-				
-				$(document).ready(function() {
-
-					$("input:radio[name=id_estructura]").click(function() {
-						alert();
-					})
-
-				})
-					
-// 		$(document).ready(function()
-// 				{
-// 				    $("input[name=id_estructura]").click(function () { 
 
 
-// 		  if (!this.checked) {
-// 		    return false;
-// 		  }
-
-// 		  $.ajax({
-// 		      type: 'POST',
-// 		      url: 'index.php',
-// 		      data: {
-// 		        idForma: this.value
-// 		      }
-// 		    })
-// 		    .done(function(res) {
-// 		        $('#formaPagoCont').html(res);
-// 		    });
-// 		});
-// 				});
-		</script>
     </head>
     <body>
 <div class="container">
-<form id="contact" action="#" >
+<form id="contact" action="#" method="POST">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
     <div>
         <h3>Nueva tienda</h3>
@@ -176,13 +145,12 @@ function content_5d11582db44589_55852353 (Smarty_Internal_Template $_smarty_tpl)
 
         
 
-<!-- 			<?php echo $_smarty_tpl->tpl_vars['bucleEstilosCheckbox']->value;?>
- -->
-        
-         <div id="formaPagoCont"><?php echo $_smarty_tpl->tpl_vars['bucleEstilosCheckbox']->value;?>
+
+                    <div id="modelo"><?php echo $_smarty_tpl->tpl_vars['bucleEstilosCheckbox']->value;?>
 </div>
-          
-          
+
+
+
           
          </section>
         <h3>Finish</h3>
@@ -197,7 +165,50 @@ function content_5d11582db44589_55852353 (Smarty_Internal_Template $_smarty_tpl)
 		<script src='javascript/jquery.steps.min.js'></script>
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
+		
+<script async  language="javascript">
+$(document).ready(function(){
+	
+	
+		
+// 	$("input[name='id_estructura']").change(function(){	
+// 	 $("input[name='id_estructura']").each(function(){
 
+       
+//             elegido=$(this).val();
+//             $.post("index.php", { elegido: elegido }, function(data){
+//                 $("#modelo").html(data);
+//             });			
+        
+//    })
+// 	})
+	
+$("input[name='id_estructura']").change(function(){	
+  var xhttp = new XMLHttpRequest();
+  elegido=$(this).val();
+  xhttp.onreadystatechange = function() {
+	  
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("modelo").innerHTML =
+this.responseText;
+    }
+  
+  };
+  xhttp.open("POST", "index.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send ("elegido="+elegido);
+});
+  
+ 
+
+
+
+
+	
+	
+	
+});
+</script>
     </body>
 </html><?php }
 }

@@ -14,43 +14,12 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js"></script>
 		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 		<script src="javascript/bootstrap.min.js"></script>
-				<script>
-				
-				
-				$(document).ready(function() {
-
-					$("input:radio[name=id_estructura]").click(function() {
-						alert();
-					})
-
-				})
-					
-// 		$(document).ready(function()
-// 				{
-// 				    $("input[name=id_estructura]").click(function () { 
 
 
-// 		  if (!this.checked) {
-// 		    return false;
-// 		  }
-
-// 		  $.ajax({
-// 		      type: 'POST',
-// 		      url: 'index.php',
-// 		      data: {
-// 		        idForma: this.value
-// 		      }
-// 		    })
-// 		    .done(function(res) {
-// 		        $('#formaPagoCont').html(res);
-// 		    });
-// 		});
-// 				});
-		</script>
     </head>
     <body>
 <div class="container">
-<form id="contact" action="#" >
+<form id="contact" action="#" method="POST">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
     <div>
         <h3>Nueva tienda</h3>
@@ -150,11 +119,11 @@
 			{$bucleEstructurasCheckbox}
         
 
-<!-- 			{$bucleEstilosCheckbox} -->
-        
-         <div id="formaPagoCont">{$bucleEstilosCheckbox}</div>
-          
-          
+
+                    <div id="modelo">{$bucleEstilosCheckbox}</div>
+
+
+
           
          </section>
         <h3>Finish</h3>
@@ -169,6 +138,49 @@
 		<script src='javascript/jquery.steps.min.js'></script>
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
+		
+<script async  language="javascript">{literal}
+$(document).ready(function(){
+	
+	
+		
+// 	$("input[name='id_estructura']").change(function(){	
+// 	 $("input[name='id_estructura']").each(function(){
 
+       
+//             elegido=$(this).val();
+//             $.post("index.php", { elegido: elegido }, function(data){
+//                 $("#modelo").html(data);
+//             });			
+        
+//    })
+// 	})
+	
+$("input[name='id_estructura']").change(function(){	
+  var xhttp = new XMLHttpRequest();
+  elegido=$(this).val();
+  xhttp.onreadystatechange = function() {
+	  
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("modelo").innerHTML =
+this.responseText;
+    }
+  
+  };
+  xhttp.open("POST", "index.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send ("elegido="+elegido);
+});
+  
+ 
+
+
+
+
+	
+	
+	
+});{/literal}
+</script>
     </body>
 </html>
