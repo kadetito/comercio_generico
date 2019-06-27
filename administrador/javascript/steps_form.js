@@ -106,6 +106,7 @@ $(document).ready(function(){
 		                    'usowww': $("#usowww").val(),
 		                    'friendly': $("#friendly").val(),
 		                    'id_estructura': $("#id_estructura").val(),
+		                    'id_estilo': $("#id_estilo").val(),
 		                    'jsonIdiomas': idiomas,
 		                    'jsonModalidades': modalidades,
 		                    'jsonTipospago': tipospago
