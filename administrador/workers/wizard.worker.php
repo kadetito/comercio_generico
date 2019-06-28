@@ -1,6 +1,7 @@
 <?php 
 
 
+
 // ChromePhp::log($idEstructuraInstant);
 // ChromePhp::warn('something went wrong!');
 
@@ -20,28 +21,27 @@ $thisSeccion='index';
 $thisPagina= 'wizard';
 
 //recibo parametros en array en JSON desde el formulario
-$jsonIdiomas = json_decode(stripslashes(filter_input(INPUT_POST, 'jsonIdiomas')));
-$jsonModalidades = json_decode(stripslashes(filter_input(INPUT_POST, 'jsonModalidades')));
-$jsonTipospago = json_decode(stripslashes(filter_input(INPUT_POST, 'jsonTipospago')));
+$jsonIdiomas = json_decode(stripslashes(filter_input(INPUT_GET, 'jsonIdiomas')));
+$jsonModalidades = json_decode(stripslashes(filter_input(INPUT_GET, 'jsonModalidades')));
+$jsonTipospago = json_decode(stripslashes(filter_input(INPUT_GET, 'jsonTipospago')));
 //recibo parametros
-$accion = filter_input(INPUT_POST, 'accion');
-$tienda_nombre = stripslashes(filter_input(INPUT_POST, 'tienda_nombre'));
-$id_tipotienda = filter_input(INPUT_POST, 'id_tipotienda');
-$usuario_cliente = filter_input(INPUT_POST, 'usuario_cliente');
-$password_cliente = filter_input(INPUT_POST, 'password_cliente');
-$nombre_cliente = filter_input(INPUT_POST, 'nombre_cliente');
-$apellidos_cliente = filter_input(INPUT_POST, 'apellidos_cliente');
-$email_cliente = filter_input(INPUT_POST, 'email_cliente');
-$dni_cliente = filter_input(INPUT_POST, 'dni_cliente');
-$id_moda = filter_input(INPUT_POST, 'id_moda');
-$id_tipospago = filter_input(INPUT_POST, 'id_tipospago');
-$dominio = filter_input(INPUT_POST, 'dominio');
-$protocolo_preferente = filter_input(INPUT_POST, 'protocolo_preferente');
-$usowww = filter_input(INPUT_POST, 'usowww');
-$friendly = filter_input(INPUT_POST, 'friendly');
-$id_estructura = filter_input(INPUT_POST, 'id_estructura');
-// $idEstructuraInstant = filter_input(INPUT_POST, 'idForma');
-$idEstructuraInstant = filter_input(INPUT_POST, 'elegido');
+$accion = filter_input(INPUT_GET, 'accion');
+$tienda_nombre = stripslashes(filter_input(INPUT_GET, 'tienda_nombre'));
+$id_tipotienda = filter_input(INPUT_GET, 'id_tipotienda');
+$usuario_cliente = filter_input(INPUT_GET, 'usuario_cliente');
+$password_cliente = filter_input(INPUT_GET, 'password_cliente');
+$nombre_cliente = filter_input(INPUT_GET, 'nombre_cliente');
+$apellidos_cliente = filter_input(INPUT_GET, 'apellidos_cliente');
+$email_cliente = filter_input(INPUT_GET, 'email_cliente');
+$dni_cliente = filter_input(INPUT_GET, 'dni_cliente');
+$id_moda = filter_input(INPUT_GET, 'id_moda');
+$id_tipospago = filter_input(INPUT_GET, 'id_tipospago');
+$dominio = filter_input(INPUT_GET, 'dominio');
+$protocolo_preferente = filter_input(INPUT_GET, 'protocolo_preferente');
+$usowww = filter_input(INPUT_GET, 'usowww');
+$friendly = filter_input(INPUT_GET, 'friendly');
+$id_estructura = filter_input(INPUT_GET, 'id_estructura');
+$id_estil = filter_input(INPUT_GET, 'id_estilo');
 
 
     /**
@@ -55,7 +55,7 @@ $idEstructuraInstant = filter_input(INPUT_POST, 'elegido');
     foreach($bucle_idiomas as $itemIdiomas):
     $ii++;
     if($contadorIdiomas!=''){
-        $bucleIdiomasCheckbox.='<label class="containercheck" for="id_locale'.$itemIdiomas['id_locale'].'">'.$itemIdiomas['idioma_nombre'].' <input id="id_locale'.$itemIdiomas['id_locale'].'" class="styled-checkbox  required" name="id_locale[]" type="checkbox" value="'.$itemIdiomas['id_locale'].'"><span class="checkmark"></span></label>';    
+        $bucleIdiomasCheckbox.='<li><label class="containercheck" for="id_locale'.$itemIdiomas['id_locale'].'">'.$itemIdiomas['idioma_nombre'].' <input id="id_locale'.$itemIdiomas['id_locale'].'" class="styled-checkbox  required" name="id_locale[]" type="checkbox" value="'.$itemIdiomas['id_locale'].'"><span class="checkmark"></span></label></li>';    
     } 
     endforeach;
     
@@ -85,7 +85,7 @@ $idEstructuraInstant = filter_input(INPUT_POST, 'elegido');
     foreach($bucle_Modalidades as $itemModalidades):
     $ii++;
     if($contadorModalidades!=''){
-        $bucleModalidadesCheckbox.='<label class="containercheck" for="id_moda'.$ii.'">'.$itemModalidades['nombre_modalidad'].' <input id="id_moda'.$ii.'" class="styled-checkbox required" name="id_moda[]" type="checkbox" value="'.$itemModalidades['id_modali'].'"><span class="checkmark"></span></label>';    
+        $bucleModalidadesCheckbox.='<li><label class="containercheck" for="id_moda'.$ii.'">'.$itemModalidades['nombre_modalidad'].' <input id="id_moda'.$ii.'" class="styled-checkbox required" name="id_moda[]" type="checkbox" value="'.$itemModalidades['id_modali'].'"><span class="checkmark"></span></label></li>';    
     }
     endforeach;
     
@@ -100,7 +100,7 @@ $idEstructuraInstant = filter_input(INPUT_POST, 'elegido');
     foreach($bucle_TiposPago as $itemTiposPago):
     $ii++;
     if($contadorTiposPago!=''){
-        $bucleTiposPagoCheckbox.='<label class="containercheck" for="id_tipospago'.$ii.'">'.$itemTiposPago['nombre_tipago'].' <input id="id_tipospago'.$ii.'" class="styled-checkbox required" name="id_tipospago[]" type="checkbox" value="'.$itemTiposPago['id_tipago'].'"><span class="checkmark"></span></label>';
+        $bucleTiposPagoCheckbox.='<li><label class="containercheck" for="id_tipospago'.$ii.'">'.$itemTiposPago['nombre_tipago'].' <input id="id_tipospago'.$ii.'" class="styled-checkbox required" name="id_tipospago[]" type="checkbox" value="'.$itemTiposPago['id_tipago'].'"><span class="checkmark"></span></label></li>';
     }
     endforeach;
 
@@ -175,7 +175,10 @@ if(isset($idEstructuraInstant)){
         $get_InsertTienda = new Tienda($id_tipotienda,$tienda_nombre);
         $get_InsertTienda->inserTotalTienda();       
         $id_tien = $get_InsertTienda->getIdTienda();
+
         
+        $_SESSION['id_tien'] = $id_tien;
+
         //guardo los settings de usuario de esta tienda
         $get_SettingsUserTienda = new SettingsUserGenerica($dni_cliente,$email_cliente,$apellidos_cliente,$nombre_cliente,$password_cliente,$usuario_cliente,$id_tien);
         $get_SettingsUserTienda->inserSettingsUserTienda(); 
@@ -186,8 +189,15 @@ if(isset($idEstructuraInstant)){
         $get_SettingsHostTienda->inserSettingsHostTienda(); 
 
         //guardo los settings de estructura
+        ChromePhp::log($id_estructura);
+        ChromePhp::log($id_tien);
         $get_SettingsEstructuraTienda = new SettingsEstructuraGenerica($id_estructura,$id_tien);
         $get_SettingsEstructuraTienda->inserSettingsEstructuraTienda(); 
+ 
+        //guardo el estilo de esta estructura
+        $orden=1;
+        $get_SettingsEstilTienda = new SettingsEstilGenerica($orden,$id_estructura,$id_tien);
+        $get_SettingsEstilTienda->inserSettingsEstilTienda(); 
         
             //guardo los idiomas de esta tienda
             if (is_array($jsonIdiomas))
@@ -206,7 +216,7 @@ if(isset($idEstructuraInstant)){
                 foreach($jsonModalidades as $jsonM){
                     $id_modali = $jsonM;
                     $id_tienda=$id_tien;
-                    ChromePhp::log($jsonM);
+
                     $get_ModalidadesTienda = new ModalidadesGenerica($id_tienda,$id_modali);
                     $get_ModalidadesTienda->inserModalidadesTienda();
                 }
@@ -218,13 +228,14 @@ if(isset($idEstructuraInstant)){
                 foreach($jsonTipospago as $jsonT){
                     $id_tipago = $jsonT;
                     $id_tienda=$id_tien;
-                    ChromePhp::log($jsonT);
+
                     $get_TipospagoTienda = new TipospagoGenerica($id_tienda,$id_tipago);
                     $get_TipospagoTienda->inserTipospagoTienda();
                 }
             }
 //        endforeach;
-        
+            
+            unset ($accion);
     }
     
     
@@ -237,7 +248,7 @@ if(isset($idEstructuraInstant)){
     $smarty->assign("bucleTiposPagoCheckbox",$bucleTiposPagoCheckbox,true);
     $smarty->assign("bucleEstructurasCheckbox",$bucleEstructurasCheckbox,true);
     $smarty->assign("bucleEstilosCheckbox",$bucleEstilosCheckbox,true);
-   
+
     
 
     

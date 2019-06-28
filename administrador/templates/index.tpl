@@ -31,16 +31,17 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.1/umd/popper.min.js"></script>
 		<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 		<script src="javascript/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     </head>
-    <body>
+    <body><div id="democon"></div>
 <div class="container">
-<form id="contact" action="#" method="POST">
+<form id="contact" action="#">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
     <div>
-        <h3>Nueva tienda</h3>
-        <section>
+        <h3><span class="texticon"><i class="fas fa-folder-plus"></i> Nueva tienda</span><span class="icontext"><i class="fas fa-folder-plus fa-2x"></i></span></h3>
+
+        <section>       <h4 class="displaywhen">Nueva tienda</h4>
             <label for="tienda_nombre">Nombre del Comercio</label>
             <input id="tienda_nombre" name="tienda_nombre" type="text" class="required">
             <label for="id_tipotienda">Qué necesita vender?</label>
@@ -56,14 +57,15 @@
             </ul>
          </div>
          <div class="form-group">
-            <label for="usuario_cliente">Nombre de usuario (para administrar la tienda)</label>
+            <label for="usuario_cliente">Nombre de usuario</label>
             <input id="usuario_cliente" name="usuario_cliente" type="text" class="required">
             <label for="password_cliente">Password</label>
             <input id="password_cliente" name="password_cliente" type="text" class="required password">
             </div>
         </section>
-        <h3>Perfil usuario</h3>
-        <section>
+        <h3><span class="texticon"><i class="fas fa-user-alt"></i> Perfil usuario</span><span class="icontext"><i class="fas fa-user-alt fa-2x"></i></span></h3>
+
+        <section><h4 class="displaywhen">Perfil usuario</h4>
             <label for="nombre_cliente">Nombre</label>
             <input id="nombre_cliente" name="nombre_cliente" type="text" class="required">
             <label for="apellidos_cliente">Apellidos</label>
@@ -73,16 +75,19 @@
             <label for="dni_cliente">DNI/NIF</label>
             <input id="dni_cliente" name="dni_cliente" type="text"  class="required">
         </section>
-        <h3>Características</h3>
-        <section>
+        <h3><span class="texticon"><i class="fa fa-tasks"></i> Características</span><span class="icontext"><i class="fa fa-tasks fa-2x"></i></span></h3>
+
+        <section><h4 class="displaywhen">Características</h4>
         <h4>Escoje qué características tendrán los productos de la tienda</h4>
-        {$bucleModalidadesCheckbox}
+        <ul class="unstyled centered">{$bucleModalidadesCheckbox}</ul>
         <h4>Escoje los tipos de pago que usarás</h4>
-        {$bucleTiposPagoCheckbox}
+        <ul class="unstyled centered">{$bucleTiposPagoCheckbox}</ul>
 
         </section>
-        <h3>Dominio y redirección</h3>
-        <section>
+              <h3><span class="texticon"><i class="fas fa-server"></i> Dominio y Servidor</span><span class="icontext"><i class="fas fa-server fa-2x"></i></span></h3>
+
+
+        <section><h4 class="displaywhen">Dominio y Servidor</h4>
             <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text" value="" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
@@ -97,11 +102,11 @@
 <p>Uso de www.</p>
 <p>
 <label class="containerradio" for="usowww1">Si
-   <input id="usowww1" class="styled-checkbox required" name="usowww" type="radio" value="S">
+   <input id="usowww1" class="styled-checkbox required www" name="usowww" type="radio" value="S">
    <span class="checkmarkr"></span>
 </label>
 <label class="containerradio" for="usowww2">No
-   <input id="usowww2" class="styled-checkbox required" name="usowww" type="radio" value="N">
+   <input id="usowww2" class="styled-checkbox required www" name="usowww" type="radio" value="N">
    <span class="checkmarkr"></span>
 </label>
 </p>           
@@ -112,11 +117,11 @@
 <p>Friendly URL</p>
 <p>
 <label class="containerradio" for="friendly1">Si
-   <input id="friendly1" class="styled-checkbox required" name="friendly" type="radio" value="S">
+   <input id="friendly1" class="styled-checkbox required cxd" name="friendly" type="radio" value="S">
    <span class="checkmarkr"></span>
 </label>
 <label class="containerradio" for="friendly2">No
-   <input id="friendly2" class="styled-checkbox required" name="friendly" type="radio" value="N">
+   <input id="friendly2" class="styled-checkbox required cxd" name="friendly" type="radio" value="N">
    <span class="checkmarkr"></span>
 </label>
 </p>     
@@ -125,9 +130,11 @@
 
 </section>
 
+ <h3><span class="texticon"><i class="fas fa-pencil-ruler"></i> Estructura</span><span class="icontext"><i class="fas fa-pencil-ruler fa-2x"></i></span></h3>
 
-<h3>Estructura</h3>
-<section>
+
+
+<section><h4 class="displaywhen">Estructura</h4>
  <div class="row">
  <div class="col-md-12" >       
 <div class="row">
@@ -135,9 +142,9 @@
 </div>        
         
         
-
+<div class="ex3">
 			{$bucleEstructurasCheckbox}
-        
+</div>        
 
 
 
@@ -146,8 +153,10 @@
 </div>
 </section>
 
-<h3>Estilos</h3>
-<section>
+ <h3><span class="texticon"><i class="fab fa-css3"></i> Estilos</span><span class="icontext"><i class="fab fa-css3  fa-2x"></i></span></h3>
+
+
+<section><h4 class="displaywhen">Estilos</h4>
  <div class="row">
  <div class="col-md-12" >       
 <div class="row">
@@ -169,10 +178,14 @@
 
 
 
-        <h3>Finish</h3>
-        <section>
-            <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
-        </section>
+ <h3><span class="texticon"><i class="far fa-thumbs-up"></i> Finalizar</span><span class="icontext"><i class="far fa-thumbs-up fa-2x"></i></span></h3>
+
+		<section><h4 class="displaywhen">Finalizar</h4>
+		<label class="containercheck" for="acceptTerms">I agree with the Terms and Conditions.
+			<input id="acceptTerms" class="styled-checkbox required" name="acceptTerms" type="checkbox">
+			<span class="checkmark"></span>
+		</label>
+		</section>
     </div>
 
 </form>
@@ -183,45 +196,23 @@
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
 		
-<script async  language="javascript">{literal}
+<script async  language="javascript">
+{literal}
 $(document).ready(function(){
-	
-	
-		
-// 	$("input[name='id_estructura']").change(function(){	
-// 	 $("input[name='id_estructura']").each(function(){
-
-       
-//             elegido=$(this).val();
-//             $.post("index.php", { elegido: elegido }, function(data){
-//                 $("#modelo").html(data);
-//             });			
-        
-//    })
-// 	})
-	
-$("input[name='id_estructura']").change(function(){	
-  var xhttp = new XMLHttpRequest();
-  elegido=$(this).val();
-  xhttp.onreadystatechange = function() {    
-    if (this.readyState == 4 ) {
-      document.getElementById("modelo").innerHTML=this.responseText;
-    }   
-  };
-  xhttp.open("POST", "workers/estilos.worker.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send ("elegido="+elegido);
-});
-  
- 
-
-
-
-
-	
-	
-	
+	$("input[name='id_estructura']").change(function(){	
+	  var xhttp = new XMLHttpRequest();
+	  elegido=$(this).val();
+	  xhttp.onreadystatechange = function() {    
+	    if (this.readyState == 4 ) {
+	      document.getElementById("modelo").innerHTML=this.responseText;
+	    }   
+	  };
+	  xhttp.open("POST", "workers/estilos.worker.php", true);
+	  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	  xhttp.send ("elegido="+elegido);
+	});
 });{/literal}
+
 </script>
     </body>
 </html>

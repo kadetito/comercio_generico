@@ -11,7 +11,7 @@ html, body {
 }
 
 ::selection {
-    background: #ffffff;
+    background: #cccccc;
     text-shadow: none;
 }
 
@@ -169,3 +169,28 @@ fieldset {
     min-height: 100vh;
     padding-top: 3%;
 }
+.unstyled li{display:inline !important;list-style:none;}
+
+.displaywhen{font-size:18px;color:#9c6eaa;font-weight:bold;text-transform:uppercase;}
+
+div.ex3 {
+
+  height: 100vh;
+  width: 99%;  
+  overflow-y: auto;
+}
+
+
+@media (min-width: 641px) {
+	#contact h3{text-align:center !important;}
+    span.icontext {display:none}
+    span.texticon {display:inline-block;text-align:center !important;margin:0 auto !important;}
+.displaywhen{display:none;}
+
+}
+
+@media (max-width: 640px) {
+    span.icontext {display:inline-block;}.displaywhen{display:block;}
+    span.texticon {display:none}.unstyled li{display:block !important;list-style:none;}
+}
+

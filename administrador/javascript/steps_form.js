@@ -1,6 +1,8 @@
 $(document).ready(function(){
-	var form = $("#contact");
 	
+
+	var form = $("#contact");
+	var currentStep = 0; //store current step number
 	form.validate({
 	    errorPlacement: function errorPlacement(error, element) { element.before(error); },
 	    rules: {
@@ -67,7 +69,7 @@ $(document).ready(function(){
 		    	    });
 		    var idiomas = JSON.stringify(idioms);
 	    	
-	    	//array modalidades
+	    	//array modalidades 
 	    	var modalis=[];
 	    	modalis.length=0;
 		    	    $('#contact input[name="id_moda[]"]').each ( function() {
@@ -87,10 +89,16 @@ $(document).ready(function(){
 		    	    });
 		    var tipospago = JSON.stringify(tipgs);
 
+		    var usowww = $("input[name='usowww']:checked").val();
+		    var friendly = $("input[name='friendly']:checked").val();
+		    
+		    var id_estructura = $("input[name='id_estructura']:checked").val();
+		    var id_estilo = $("input[name='id_estilo']:checked").val();
 		    
 	  	    	$.ajax({
-		            type: "POST",
-		            dataType: 'JSON',
+		            type: "GET",
+		            url: "index.php",
+
 		            data: { 
 		            	    'accion': $("#accion").val(),
 		                    'tienda_nombre': $("#tienda_nombre").val(),
@@ -103,19 +111,20 @@ $(document).ready(function(){
 		                    'dni_cliente': $("#dni_cliente").val(),
 		                    'dominio': $("#dominio").val(),
 		                    'protocolo_preferente': $("#protocolo_preferente").val(),
-		                    'usowww': $("#usowww").val(),
-		                    'friendly': $("#friendly").val(),
-		                    'id_estructura': $("#id_estructura").val(),
-		                    'id_estilo': $("#id_estilo").val(),
+		                    'usowww': usowww,
+		                    'friendly': friendly,
+		                    'id_estructura': id_estructura,
+		                    'id_estilo':id_estilo,
 		                    'jsonIdiomas': idiomas,
 		                    'jsonModalidades': modalidades,
 		                    'jsonTipospago': tipospago
 		                  },
-		            url: "index.php",
-		            success : function(data) {
-		             alert('guardado');
 		            
-		             $("#contact").submit();
+		            success: function(data) {
+		             alert('guardado');
+		             
+		             event.preventDefault();
+		             location.href = "resultado.php"
 		            }
 		        });
 	  	    	

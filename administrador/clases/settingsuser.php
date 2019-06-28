@@ -181,7 +181,7 @@ class SettingsUserGenerica {
         $consulta->bindParam(':dni_cliente',$this->dni_cliente);
         
         $consulta->execute();
-        $this->id= $conexion->lastInsertId();
+        $this->id_setuser= $conexion->lastInsertId();
         
     }
     

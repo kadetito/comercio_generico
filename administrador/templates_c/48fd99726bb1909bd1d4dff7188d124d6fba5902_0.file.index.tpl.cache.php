@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-27 00:21:24
+/* Smarty version 3.1.33, created on 2019-06-28 21:12:43
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d13efe439fa02_44805816',
+  'unifunc' => 'content_5d1666abe383b5_74158207',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1561587355,
+      1 => 1561745009,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d13efe439fa02_44805816 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
+function content_5d1666abe383b5_74158207 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '4549346615d1666abdab9f4_96934334';
 ?>
 <html>
     <head>
@@ -64,43 +64,45 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 		<?php echo '<script'; ?>
  src="javascript/bootstrap.min.js"><?php echo '</script'; ?>
 >
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     </head>
-    <body>
+    <body><div id="democon"></div>
 <div class="container">
-<form id="contact" action="#" method="POST">
+<form id="contact" action="#">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
     <div>
-        <h3>Nueva tienda</h3>
-        <section>
+        <h3><span class="texticon"><i class="fas fa-folder-plus"></i> Nueva tienda</span><span class="icontext"><i class="fas fa-folder-plus fa-2x"></i></span></h3>
+
+        <section>       <h4 class="displaywhen">Nueva tienda</h4>
             <label for="tienda_nombre">Nombre del Comercio</label>
             <input id="tienda_nombre" name="tienda_nombre" type="text" class="required">
             <label for="id_tipotienda">Qué necesita vender?</label>
             
             <select id="id_tipotienda" name="id_tipotienda" class="form-control required">
             <option value="">Seleccione el tipo de comercio</option>
-            <?php echo '/*%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
-/*/%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/';?>
+            <?php echo '/*%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
+/*/%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/';?>
 
             </select>
         <h4>Idiomas</h4>
         <div class="form-group idioms">
 			<ul class="unstyled centered">
-            <?php echo '/*%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
-/*/%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/';?>
+            <?php echo '/*%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
+/*/%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/';?>
 
             </ul>
          </div>
          <div class="form-group">
-            <label for="usuario_cliente">Nombre de usuario (para administrar la tienda)</label>
+            <label for="usuario_cliente">Nombre de usuario</label>
             <input id="usuario_cliente" name="usuario_cliente" type="text" class="required">
             <label for="password_cliente">Password</label>
             <input id="password_cliente" name="password_cliente" type="text" class="required password">
             </div>
         </section>
-        <h3>Perfil usuario</h3>
-        <section>
+        <h3><span class="texticon"><i class="fas fa-user-alt"></i> Perfil usuario</span><span class="icontext"><i class="fas fa-user-alt fa-2x"></i></span></h3>
+
+        <section><h4 class="displaywhen">Perfil usuario</h4>
             <label for="nombre_cliente">Nombre</label>
             <input id="nombre_cliente" name="nombre_cliente" type="text" class="required">
             <label for="apellidos_cliente">Apellidos</label>
@@ -110,20 +112,23 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
             <label for="dni_cliente">DNI/NIF</label>
             <input id="dni_cliente" name="dni_cliente" type="text"  class="required">
         </section>
-        <h3>Características</h3>
-        <section>
+        <h3><span class="texticon"><i class="fa fa-tasks"></i> Características</span><span class="icontext"><i class="fa fa-tasks fa-2x"></i></span></h3>
+
+        <section><h4 class="displaywhen">Características</h4>
         <h4>Escoje qué características tendrán los productos de la tienda</h4>
-        <?php echo '/*%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
-/*/%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/';?>
-
+        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
+/*/%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/';?>
+</ul>
         <h4>Escoje los tipos de pago que usarás</h4>
-        <?php echo '/*%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
-/*/%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/';?>
-
+        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
+/*/%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/';?>
+</ul>
 
         </section>
-        <h3>Dominio y redirección</h3>
-        <section>
+              <h3><span class="texticon"><i class="fas fa-server"></i> Dominio y Servidor</span><span class="icontext"><i class="fas fa-server fa-2x"></i></span></h3>
+
+
+        <section><h4 class="displaywhen">Dominio y Servidor</h4>
             <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text" value="" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
@@ -138,11 +143,11 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 <p>Uso de www.</p>
 <p>
 <label class="containerradio" for="usowww1">Si
-   <input id="usowww1" class="styled-checkbox required" name="usowww" type="radio" value="S">
+   <input id="usowww1" class="styled-checkbox required www" name="usowww" type="radio" value="S">
    <span class="checkmarkr"></span>
 </label>
 <label class="containerradio" for="usowww2">No
-   <input id="usowww2" class="styled-checkbox required" name="usowww" type="radio" value="N">
+   <input id="usowww2" class="styled-checkbox required www" name="usowww" type="radio" value="N">
    <span class="checkmarkr"></span>
 </label>
 </p>           
@@ -153,11 +158,11 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 <p>Friendly URL</p>
 <p>
 <label class="containerradio" for="friendly1">Si
-   <input id="friendly1" class="styled-checkbox required" name="friendly" type="radio" value="S">
+   <input id="friendly1" class="styled-checkbox required cxd" name="friendly" type="radio" value="S">
    <span class="checkmarkr"></span>
 </label>
 <label class="containerradio" for="friendly2">No
-   <input id="friendly2" class="styled-checkbox required" name="friendly" type="radio" value="N">
+   <input id="friendly2" class="styled-checkbox required cxd" name="friendly" type="radio" value="N">
    <span class="checkmarkr"></span>
 </label>
 </p>     
@@ -166,9 +171,11 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 
 </section>
 
+ <h3><span class="texticon"><i class="fas fa-pencil-ruler"></i> Estructura</span><span class="icontext"><i class="fas fa-pencil-ruler fa-2x"></i></span></h3>
 
-<h3>Estructura</h3>
-<section>
+
+
+<section><h4 class="displaywhen">Estructura</h4>
  <div class="row">
  <div class="col-md-12" >       
 <div class="row">
@@ -176,11 +183,11 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 </div>        
         
         
+<div class="ex3">
+			<?php echo '/*%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
+/*/%%SmartyNocache:4549346615d1666abdab9f4_96934334%%*/';?>
 
-			<?php echo '/*%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
-/*/%%SmartyNocache:6851815975d13efe43140b1_48227597%%*/';?>
-
-        
+</div>        
 
 
 
@@ -189,8 +196,10 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 </div>
 </section>
 
-<h3>Estilos</h3>
-<section>
+ <h3><span class="texticon"><i class="fab fa-css3"></i> Estilos</span><span class="icontext"><i class="fab fa-css3  fa-2x"></i></span></h3>
+
+
+<section><h4 class="displaywhen">Estilos</h4>
  <div class="row">
  <div class="col-md-12" >       
 <div class="row">
@@ -212,10 +221,14 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 
 
 
-        <h3>Finish</h3>
-        <section>
-            <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
-        </section>
+ <h3><span class="texticon"><i class="far fa-thumbs-up"></i> Finalizar</span><span class="icontext"><i class="far fa-thumbs-up fa-2x"></i></span></h3>
+
+		<section><h4 class="displaywhen">Finalizar</h4>
+		<label class="containercheck" for="acceptTerms">I agree with the Terms and Conditions.
+			<input id="acceptTerms" class="styled-checkbox required" name="acceptTerms" type="checkbox">
+			<span class="checkmark"></span>
+		</label>
+		</section>
     </div>
 
 </form>
@@ -236,44 +249,22 @@ $_smarty_tpl->compiled->nocache_hash = '6851815975d13efe43140b1_48227597';
 		
 <?php echo '<script'; ?>
  async  language="javascript">
+
 $(document).ready(function(){
-	
-	
-		
-// 	$("input[name='id_estructura']").change(function(){	
-// 	 $("input[name='id_estructura']").each(function(){
-
-       
-//             elegido=$(this).val();
-//             $.post("index.php", { elegido: elegido }, function(data){
-//                 $("#modelo").html(data);
-//             });			
-        
-//    })
-// 	})
-	
-$("input[name='id_estructura']").change(function(){	
-  var xhttp = new XMLHttpRequest();
-  elegido=$(this).val();
-  xhttp.onreadystatechange = function() {    
-    if (this.readyState == 4 ) {
-      document.getElementById("modelo").innerHTML=this.responseText;
-    }   
-  };
-  xhttp.open("POST", "workers/estilos.worker.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send ("elegido="+elegido);
+	$("input[name='id_estructura']").change(function(){	
+	  var xhttp = new XMLHttpRequest();
+	  elegido=$(this).val();
+	  xhttp.onreadystatechange = function() {    
+	    if (this.readyState == 4 ) {
+	      document.getElementById("modelo").innerHTML=this.responseText;
+	    }   
+	  };
+	  xhttp.open("POST", "workers/estilos.worker.php", true);
+	  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	  xhttp.send ("elegido="+elegido);
+	});
 });
-  
- 
 
-
-
-
-	
-	
-	
-});
 <?php echo '</script'; ?>
 >
     </body>

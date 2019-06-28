@@ -29,7 +29,7 @@ class SettingsHostGenerica {
         return $this->id_hostrouting;
     }
     public function getIdTienda(){
-        return $this->id_tienda;
+        return $this->id_tien;
     }
     public function getDominio(){
         return $this->dominio;
@@ -60,7 +60,7 @@ class SettingsHostGenerica {
         $this->id_hostrouting = $id_hostrouting;
     }
     public function setIdTienda(){
-        $this->id_tienda = $id_tienda;
+        $this->id_tien = $id_tien;
     }
     public function setDominio(){
         $this->dominio = $dominio;
@@ -84,18 +84,18 @@ class SettingsHostGenerica {
         $this->fecha_alta = $fecha_alta;
     }
     
+
     //constructor
-    public function __construct($fecha_alta,$usowww,$friendly,$protocolo_preferente,$dominio,$id_tienda,$id_hostrouting=null)
+    public function __construct($fecha_alta,$usowww,$friendly,$protocolo_preferente,$dominio,$id_tien,$id_hostrouting=null)
     {      
-        $this->fecha_alta              =  $fecha_alta;
-        $this->usowww                  =  $usowww;
-        $this->friendly                =  $friendly;
-        $this->protocolo_preferente    =  $protocolo_preferente;
-//         $this->nombre                  =  $nombre;
-//         $this->ruta_servidor           =  $ruta_servidor;
-        $this->dominio                 =  $dominio;
-        $this->id_tienda               =  $id_tienda;
+
         $this->id_hostrouting          =  $id_hostrouting;    
+        $this->id_tien               =  $id_tien;
+        $this->dominio                 =  $dominio;
+        $this->protocolo_preferente    =  $protocolo_preferente;
+        $this->friendly                =  $friendly;
+        $this->usowww                  =  $usowww;
+        $this->fecha_alta              =  $fecha_alta;
     }
     
 
@@ -188,14 +188,13 @@ class SettingsHostGenerica {
 //         $consulta->bindParam(':nombre',$this->nombre);
 //         $consulta->bindParam(':ruta_servidor',$this->ruta_servidor);
         $consulta->bindParam(':dominio',$this->dominio);
-        $consulta->bindParam(':id_tienda',$this->id_tienda);
+        $consulta->bindParam(':id_tienda',$this->id_tien);
         
 //         ChromePhp::log($this->dominio);
 
-        echo '<script>alert("'.$this->dominio.'")</script>';
         
         $consulta->execute();
-        $this->id= $conexion->lastInsertId();
+        $this->id_hostrouting= $conexion->lastInsertId();
         
     }
     

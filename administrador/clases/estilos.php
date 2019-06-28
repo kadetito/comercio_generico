@@ -163,3 +163,106 @@ class Estilos {
     
     
 }
+
+
+class SettingsEstilGenerica {
+    
+    //defino las propiedades
+    private $id_estilo;
+    
+    const TABLA = 'generica_estilos'; //constante del nombre de la tabla
+    
+    //metodos getters y setters
+    public function getId(){
+        return $this->id_estilo;
+    }
+
+    public function getIdTienda(){
+        return $this->id_tienda;
+    }
+    public function getIdFk(){
+        return $this->id_estructura;
+    }
+    
+    public function getOrden(){
+        return $this->orden;
+    }
+    
+
+    
+    public function setId(){
+        $this->id_estilo = $id_estilo;
+    }
+    public function setIdTienda(){
+        $this->id_tienda = $id_tienda;
+    }
+    public function setIdFk(){
+        $this->id_estructura = $id_estructura;
+    }
+    public function setOrden(){
+        $this->orden = $orden;
+    }
+    
+    //constructor
+    public function __construct($orden,$id_estructura,$id_tien,$id_estilo=null)
+    {
+        $this->id_estilo = $id_estilo;
+        $this->id_tienda = $id_tien;
+        $this->id_estructura = $id_estructura;
+        $this->orden = $orden;
+    }
+    
+    
+    //**
+    // OBTENER DETALLE
+    // obtiene el detalle del registro pedido por url get
+    //**
+    public static function consultaDetalle($idrequest){
+        $conexion = new conexion();
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE id_cate = :id_cate ");
+        $consulta->execute(array(':id_cate' => $idrequest));
+        $registro = $consulta->fetch();
+        if($registro){
+            return new self($registro['alias_categoria'],$registro['descripcion_categoria'],$registro['tags_categoria'],$registro['nombre_categoria'],$idrequest);
+        } else {
+            return false;
+        }
+    }
+    
+    
+    
+    //**----------------------------
+    // INSERT TOTAL
+    // inserta todo el registro
+    //**---------------------
+    public function inserSettingsEstilTienda(){
+        
+        $conexion = new Conexion();
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (orden,id_estr_fk,id_tienda) VALUES (:orden,:id_estr_fk,:id_tienda)');
+        
+        $consulta->bindParam(':id_tienda',  $this->id_tienda);
+        $consulta->bindParam(':id_estr_fk',$this->id_estructura);
+        $consulta->bindParam(':orden',$this->orden);
+        
+        $consulta->execute();
+        $this->id_estilo= $conexion->lastInsertId();
+    }
+    
+    
+    
+    public function eliminarRegistroCat($id_cate){
+        //                echo '<script>alert("hola")</script>';
+        $conexion = new Conexion();
+        if($id_cate) {
+            $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA .'  WHERE id_cate = :id_cate');
+            $consulta->bindParam(':id_cate', $id_cate);
+            $consulta->execute();
+        }
+        $conexion = null; //cierro conexion
+    }
+    
+    
+    
+}
