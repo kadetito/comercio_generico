@@ -57,10 +57,10 @@
             </ul>
          </div>
          <div class="form-group">
-            <label for="usuario_cliente">Nombre de usuario</label>
-            <input id="usuario_cliente" name="usuario_cliente" type="text" class="required">
+            <label for="usuario_cliente">Nombre de usuario<div id="result-username">{$resu}</div></label>
+            <input id="usuario_cliente" name="usuario_cliente" type="text" value="" class="required">
             <label for="password_cliente">Password</label>
-            <input id="password_cliente" name="password_cliente" type="text" class="required password">
+            <input id="password_cliente" name="password_cliente" type="text"  value="" class="required password">
             </div>
         </section>
         <h3><span class="texticon"><i class="fas fa-user-alt"></i> Perfil usuario</span><span class="icontext"><i class="fas fa-user-alt fa-2x"></i></span></h3>
@@ -73,7 +73,7 @@
             <label for="email_cliente">Email</label>
             <input id="email_cliente" name="email_cliente" type="text" class="required email">
             <label for="dni_cliente">DNI/NIF</label>
-            <input id="dni_cliente" name="dni_cliente" type="text"  class="required">
+            <input id="dni_cliente" name="dni_cliente" type="text" value="" class="required">
         </section>
         <h3><span class="texticon"><i class="fa fa-tasks"></i> Características</span><span class="icontext"><i class="fa fa-tasks fa-2x"></i></span></h3>
 
@@ -88,7 +88,7 @@
 
 
         <section><h4 class="displaywhen">Dominio y Servidor</h4>
-            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text" value="" class="required" />
+            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="43445454e" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
 				<option value="http://">http://</option>
@@ -211,8 +211,32 @@ $(document).ready(function(){
 	  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	  xhttp.send ("elegido="+elegido);
 	});
-});{/literal}
+});  
 
+$(document).ready(function(){
+	  $("#nombre_cliente").blur(function(){
+	    alert("This input field has lost its focus.");
+	  });
+	});
+	
+$(document).ready(function(){	
+
+	$("input[name='usuario_cliente']").blur(function(){	
+	       
+	        var nombre_cliente = $(this).val();		
+	        var dataString = 'nombre_client='+nombre_cliente;
+	 
+	        $.ajax({
+	            type: "POST",
+	            url: "index.php",
+	            data: dataString,
+	            success: function(data) {
+	                $('#result-username').fadeIn(1000).html(data);
+	            }
+	        });
+	    });              
+	});  
+{/literal}
 </script>
     </body>
 </html>

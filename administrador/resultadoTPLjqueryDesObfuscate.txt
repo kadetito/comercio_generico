@@ -1,0 +1,51 @@
+{literal}
+		$(document).ready(function(){
+				var bar = "bar";
+			$("#cancelar").click(function() { 
+				  var foo=bar;
+				  if ( foo == "bar" ) {
+				    var isGood=confirm('Se dispone a cancelar su tienda, puede volver a crearla de nuevo si lo desea');
+				    if (isGood) {
+				    	var id_tien="{/literal}{$idtienda}{literal}";	
+				        var xmlhttp = new XMLHttpRequest();
+				        xmlhttp.open("GET", "workers/cancelar.worker.php?id_tien=" + id_tien, true);
+				        xmlhttp.send();
+						
+				        window.location.href = "index.php";
+						
+				    } else {
+				      alert('Pulse, el botón de confirmacion para crear su tienda');
+				    }
+				  }
+			});
+		
+				var bart = "bart";
+				$("#confirmar").click(function() { 
+					  var foot=bart;
+					  if ( foot == "bart" ) {
+					    var isGoodt=confirm('Su tienda será creada a continuación');
+					    if (isGoodt) {
+					    	var id_tien="{/literal}{$idtienda}{literal}";	
+					    	var dni="{/literal}{$dnicliente}{literal}";	
+					    	
+					    	
+					    	var rnd = Math.floor((Math.random() * 100000) + 1);
+					    	var rnd2 = Math.floor((Math.random() * 100000) + 1);
+
+					    	console.log(dni);
+					    	
+					    	
+					        var xmlhttp = new XMLHttpRequest();
+					        xmlhttp.open("GET", "workers/update.worker.php?id_tien=" + id_tien, true);
+					        xmlhttp.send();
+							
+					        window.location.href = "index.php?freshtokn="+rnd+dni+rnd2;
+							
+					    } else {
+					      alert('Pulse, el botón de confirmacion para crear su tienda');
+					    }
+					  }
+				});
+			});
+			{/literal}
+			

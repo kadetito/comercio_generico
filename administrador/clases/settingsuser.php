@@ -107,24 +107,80 @@ class SettingsUserGenerica {
         return [ $registros ];
     }
     
-   
-    
-    //**
-    // OBTENER DETALLE
-    // obtiene el detalle del registro pedido por url get
-    //**
-    public static function consultaDetalle($idrequest){
-        $conexion = new conexion();
-        $conexion->exec("SET NAMES 'utf8'");
-        $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE id_cate = :id_cate ");
-        $consulta->execute(array(':id_cate' => $idrequest));
-        $registro = $consulta->fetch();
-        if($registro){
-            return new self($registro['alias_categoria'],$registro['descripcion_categoria'],$registro['tags_categoria'],$registro['nombre_categoria'],$idrequest);
-        } else {
-            return false;
+    /**
+     * CONSULTA us I pass
+     * 
+     * @return number[]
+     */
+
+    public static function consultaDetalleUiP($freshtoknRight){
+            $conexion = new conexion();
+            $conexion->exec("SET NAMES 'utf8'");
+            $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE dni_cliente = :dni_cliente ");
+            $consulta->execute(array(':dni_cliente' => $freshtoknRight));
+            $registro = $consulta->fetch();
+            if($registro){
+                return new self(
+
+                    $registro['dni_cliente'],
+                    $registro['email_cliente'],
+                    $registro['apellidos_cliente'],
+                    $registro['nombre_cliente'],
+                    $registro['password_cliente'],
+                    $registro['usuario_cliente'],
+                    $registro['id_tienda'],
+                    $freshtoknRight);
+            } else {
+                return false;
+            }
         }
-    }
+    
+        
+        /**
+         * CONSULTA login
+         *
+         * @return number[]
+         */
+        
+        public static function consultaLogin($freshtoknRight){ 
+            $conexion = new conexion();
+            $conexion->exec("SET NAMES 'utf8'");
+            $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE dni_cliente = :dni_cliente ");
+            $consulta->execute(array(':dni_cliente' => $freshtoknRight));
+            $registro = $consulta->fetch();
+            if($registro){
+                return new self(
+                    $registro['dni_cliente'],
+                    $registro['email_cliente'],
+                    $registro['apellidos_cliente'],
+                    $registro['nombre_cliente'],
+                    $registro['password_cliente'],
+                    $registro['usuario_cliente'],
+                    $registro['id_tienda'],
+                    $registro['id_setuser']);
+            } else {
+                return false;
+            }
+        }
+        
+        
+
+//     //**
+//     // OBTENER DETALLE
+//     // obtiene el detalle del registro pedido por url get
+//     //**
+//     public static function consultaDetalle($idrequest){
+//         $conexion = new conexion();
+//         $conexion->exec("SET NAMES 'utf8'");
+//         $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE id_cate = :id_cate ");
+//         $consulta->execute(array(':id_cate' => $idrequest));
+//         $registro = $consulta->fetch();
+//         if($registro){
+//             return new self($registro['alias_categoria'],$registro['descripcion_categoria'],$registro['tags_categoria'],$registro['nombre_categoria'],$idrequest);
+//         } else {
+//             return false;
+//         }
+//     }
     
     
     //**----------------------------

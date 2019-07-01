@@ -132,6 +132,7 @@ class Tienda {
         $consulta->bindParam(':id_tipotienda', $this->id_tipotienda);
         $consulta->bindParam(':tienda_nombre',  $this->tienda_nombre);        
         $consulta->execute();
+        
         $this->id_tienda= $conexion->lastInsertId();        
         //devuelvo el ID del registro
         $registros = $conexion->lastInsertId();        

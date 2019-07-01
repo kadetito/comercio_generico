@@ -2,6 +2,13 @@
 html, body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.fghj .card{margin-bottom:14px;}
+.fghj .card-header{font-size:12px;padding:6px;text-transform:uppercase;}
+.fghj .card-body{padding:14px;font-size:16px;}
+.fghj h5{margin-top:15px;margin-bottom:15px;font-size:13px;}
+.fghj .minj{min-height:150px;}
+
 .percent{width:100%;height:auto;}
 .idioms input{margin-left:8px;margin-right:12px;}
 

@@ -183,6 +183,9 @@ class SettingsEstilGenerica {
     public function getIdFk(){
         return $this->id_estructura;
     }
+    public function getIdestil(){
+        return $this->id_estil;
+    }
     
     public function getOrden(){
         return $this->orden;
@@ -192,6 +195,9 @@ class SettingsEstilGenerica {
     
     public function setId(){
         $this->id_estilo = $id_estilo;
+    }
+    public function setIdestil(){
+        $this->id_estil = $id_estil;
     }
     public function setIdTienda(){
         $this->id_tienda = $id_tienda;
@@ -204,11 +210,12 @@ class SettingsEstilGenerica {
     }
     
     //constructor
-    public function __construct($orden,$id_estructura,$id_tien,$id_estilo=null)
+    public function __construct($orden,$id_estil,$id_estructura,$id_tien,$id_estilo=null)
     {
         $this->id_estilo = $id_estilo;
         $this->id_tienda = $id_tien;
         $this->id_estructura = $id_estructura;
+        $this->id_estil = $id_estil;
         $this->orden = $orden;
     }
     
@@ -240,10 +247,11 @@ class SettingsEstilGenerica {
         
         $conexion = new Conexion();
         $conexion->exec("SET NAMES 'utf8'");
-        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (orden,id_estr_fk,id_tienda) VALUES (:orden,:id_estr_fk,:id_tienda)');
-        
+        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (orden,id_estil,id_estr_fk,id_tienda) VALUES (:orden,:id_estil,:id_estr_fk,:id_tienda)');
+
         $consulta->bindParam(':id_tienda',  $this->id_tienda);
         $consulta->bindParam(':id_estr_fk',$this->id_estructura);
+        $consulta->bindParam(':id_estil',$this->id_estil);
         $consulta->bindParam(':orden',$this->orden);
         
         $consulta->execute();

@@ -13,7 +13,7 @@ $bucleTiposPagoCheckbox='';
 $bucleEstructurasCheckbox = '';
 $bucleEstilosCheckbox ='';
 $respuestaServidor='';
-
+$resu='';
 $i = 0;
 $ii = 0;
 
@@ -42,8 +42,8 @@ $usowww = filter_input(INPUT_GET, 'usowww');
 $friendly = filter_input(INPUT_GET, 'friendly');
 $id_estructura = filter_input(INPUT_GET, 'id_estructura');
 $id_estil = filter_input(INPUT_GET, 'id_estilo');
-
-
+$id_estruc = filter_input(INPUT_GET, 'id_estructura');
+//$nombr_client = filter_input(INPUT_POST, 'nombre_client');
     /**
      * OBTENGO BUCLE IDIOMAS
      * @var unknown $resultado
@@ -163,6 +163,24 @@ if(isset($idEstructuraInstant)){
     
     
     
+    /**
+     * compruebo que el nombre de usuario no este cogido
+     */
+    sleep(1);
+//     if (isset($nombr_client)) {
+    $nombr_client="dasdas";
+    $get_users = ClaseGetUsuario::consultaUsers($nombr_client);
+            $Uusers=$get_users->getUsuarioclienteS();
+
+        
+        
+        if ($Uusers==$nombr_client) {
+            $resu.='Nombre de usuario no disponible.';
+        } else {
+            $resu.='Usuario disponible.';
+        }
+//     }
+
 
     /**
      * ALTA TIENDA
@@ -189,14 +207,19 @@ if(isset($idEstructuraInstant)){
         $get_SettingsHostTienda->inserSettingsHostTienda(); 
 
         //guardo los settings de estructura
-        ChromePhp::log($id_estructura);
-        ChromePhp::log($id_tien);
-        $get_SettingsEstructuraTienda = new SettingsEstructuraGenerica($id_estructura,$id_tien);
+//         ChromePhp::log($id_estructura);
+//         ChromePhp::log($id_tien);
+
+        ChromePhp::log("A id tienda".$id_tien);
+        ChromePhp::log("A id estruc".$id_estruc);
+
+        $get_SettingsEstructuraTienda = new SettingsEstructuraGenerica($id_tien,$id_estruc);
         $get_SettingsEstructuraTienda->inserSettingsEstructuraTienda(); 
  
         //guardo el estilo de esta estructura
         $orden=1;
-        $get_SettingsEstilTienda = new SettingsEstilGenerica($orden,$id_estructura,$id_tien);
+        ChromePhp::log($id_estil);
+        $get_SettingsEstilTienda = new SettingsEstilGenerica($orden,$id_estil,$id_estructura,$id_tien);
         $get_SettingsEstilTienda->inserSettingsEstilTienda(); 
         
             //guardo los idiomas de esta tienda
@@ -248,7 +271,8 @@ if(isset($idEstructuraInstant)){
     $smarty->assign("bucleTiposPagoCheckbox",$bucleTiposPagoCheckbox,true);
     $smarty->assign("bucleEstructurasCheckbox",$bucleEstructurasCheckbox,true);
     $smarty->assign("bucleEstilosCheckbox",$bucleEstilosCheckbox,true);
-
+    $smarty->assign("resu",$resu,true);
+    
     
 
     

@@ -26,7 +26,7 @@ require ("includes/sesion.php");
 //     require (ROOT_DIR.'/clases/usuario.class.php');
 
 
-     require (ROOT_DIR.'/clases/tienda.php');
+     require (ROOT_DIR.'/clases/clasetienda.php');
      require (ROOT_DIR.'/clases/settingsuser.php');
      require (ROOT_DIR.'/clases/settingshost.php');
      require (ROOT_DIR.'/clases/idiomas.php');
@@ -37,10 +37,9 @@ require ("includes/sesion.php");
      require (ROOT_DIR.'/clases/modalidades.php');
      require (ROOT_DIR.'/clases/estructuras.php');
      require (ROOT_DIR.'/clases/estilos.php');
-     require (ROOT_DIR.'/clases/ClaseGetUsuario.php');
 // //WORKERS----------------------------------------------------------  
 //     //settings
-    require (ROOT_DIR.'/workers/wizard.worker.php');
+    require (ROOT_DIR.'/workers/perfil.worker.php');
 
 
 //$smarty->assign("paginador",$paginador,true); 
@@ -48,4 +47,4 @@ require ("includes/sesion.php");
 //=========================================================
 // template a usar
 //==========================================================
-$smarty->display(ROOT_DIR.'/templates/index.tpl');
+$smarty->display(ROOT_DIR.'/templates/perfil.tpl');
