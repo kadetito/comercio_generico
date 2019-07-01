@@ -14,7 +14,7 @@ class ClaseGetUsuario {
     
     //defino las propiedades
     private $id_setuser;
-    
+    private $usuario_cliente;
     public function getIdsetuserS(){
         return $this->id_setuser;
     }
@@ -89,29 +89,58 @@ class ClaseGetUsuario {
      * obtener nombres de usuario
      */
 
-    public static function consultaUsers($nombr_client){   
-        
+    public static function consultaUsers($usuario_cliente){    ChromePhp::log($usuario_cliente);       
             $conexion = new conexion();
             $conexion->exec("SET NAMES 'utf8'");
-            $consulta = $conexion->prepare("SELECT * FROM generica_settings_user WHERE usuario_cliente= :usuario_cliente "
-                );
-            $consulta->execute(array(':usuario_cliente' => $nombr_client));
+            $consulta = $conexion->prepare("SELECT * FROM generica_settings_user WHERE usuario_cliente= :usuario_cliente ");
+            $consulta->execute(array(':usuario_cliente' => $usuario_cliente));
+            $consulta->bindParam(':usuario_cliente', $usuario_cliente, PDO::PARAM_STR);
             $registro = $consulta->fetch();
-            if($registro){
+            
+            
+            if ($registro === false) {
+                throw new Exception($registro->error);
+            } else {
                 return new self(
                     $registro['password_cliente'],
                     $registro['usuario_cliente'],
                     $registro['email_cliente'],
                     $registro['dni_cliente'],
                     $registro['apellidos_cliente'],
-                    $registro['nombre_cliente'],
+                    $usuario_cliente,
                     $registro['id_tienda'],
                     $registro['id_setuser']
                     );
-//                 ChromePhp::log($registro['usuario_cliente']);
-            } else {
-                return false;
             }
-        }
+    }
+    
+    /**
+     * obtener emails
+     */
+    
+    public static function consultaEmails($email_cliente){    ChromePhp::log($email_cliente);
+    $conexion = new conexion();
+    $conexion->exec("SET NAMES 'utf8'");
+    $consulta = $conexion->prepare("SELECT * FROM generica_settings_user WHERE email_cliente= :email_cliente ");
+    $consulta->execute(array(':email_cliente' => $email_cliente));
+    $consulta->bindParam(':email_cliente', $email_cliente, PDO::PARAM_STR);
+    $registro = $consulta->fetch();
+    
+    
+    if ($registro === false) {
+        throw new Exception($registro->error);
+    } else {
+        return new self(
+            $registro['password_cliente'],
+            $registro['usuario_cliente'],
+            $email_cliente,
+            $registro['dni_cliente'],
+            $registro['apellidos_cliente'],
+            $registro['usuario_cliente'],
+            $registro['id_tienda'],
+            $registro['id_setuser']
+            );
+    }
+    }
     
 }

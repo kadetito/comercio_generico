@@ -162,24 +162,6 @@ if(isset($idEstructuraInstant)){
     
     
     
-    
-    /**
-     * compruebo que el nombre de usuario no este cogido
-     */
-    sleep(1);
-//     if (isset($nombr_client)) {
-    $nombr_client="dasdas";
-    $get_users = ClaseGetUsuario::consultaUsers($nombr_client);
-            $Uusers=$get_users->getUsuarioclienteS();
-
-        
-        
-        if ($Uusers==$nombr_client) {
-            $resu.='Nombre de usuario no disponible.';
-        } else {
-            $resu.='Usuario disponible.';
-        }
-//     }
 
 
     /**

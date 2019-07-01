@@ -36,17 +36,17 @@
     </head>
     <body><div id="democon"></div>
 <div class="container">
-<form id="contact" action="#">
+<form id="contact" name="form" action="#">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
     <div>
         <h3><span class="texticon"><i class="fas fa-folder-plus"></i> Nueva tienda</span><span class="icontext"><i class="fas fa-folder-plus fa-2x"></i></span></h3>
 
         <section>       <h4 class="displaywhen">Nueva tienda</h4>
             <label for="tienda_nombre">Nombre del Comercio</label>
-            <input id="tienda_nombre" name="tienda_nombre" type="text" class="required">
+            <input id="tienda_nombre" placeholder="" name="tienda_nombre" type="text" class="required">
             <label for="id_tipotienda">Qué necesita vender?</label>
             
-            <select id="id_tipotienda" name="id_tipotienda" class="form-control required">
+            <select id="id_tipotienda"  placeholder="" name="id_tipotienda" class="form-control required">
             <option value="">Seleccione el tipo de comercio</option>
             {$bucleTiposTiendaCheckbox}
             </select>
@@ -57,7 +57,7 @@
             </ul>
          </div>
          <div class="form-group">
-            <label for="usuario_cliente">Nombre de usuario<div id="result-username">{$resu}</div></label>
+            <label for="usuario_cliente">Nombre de usuario<div id="result-username"></div></label>
             <input id="usuario_cliente" name="usuario_cliente" type="text" value="" class="required">
             <label for="password_cliente">Password</label>
             <input id="password_cliente" name="password_cliente" type="text"  value="" class="required password">
@@ -70,7 +70,7 @@
             <input id="nombre_cliente" name="nombre_cliente" type="text" class="required">
             <label for="apellidos_cliente">Apellidos</label>
             <input id="apellidos_cliente" name="apellidos_cliente" type="text" class="required">
-            <label for="email_cliente">Email</label>
+            <label for="email_cliente">Email<div id="result-email"></div></label>
             <input id="email_cliente" name="email_cliente" type="text" class="required email">
             <label for="dni_cliente">DNI/NIF</label>
             <input id="dni_cliente" name="dni_cliente" type="text" value="" class="required">
@@ -213,29 +213,50 @@ $(document).ready(function(){
 	});
 });  
 
-$(document).ready(function(){
-	  $("#nombre_cliente").blur(function(){
-	    alert("This input field has lost its focus.");
-	  });
-	});
-	
-$(document).ready(function(){	
 
-	$("input[name='usuario_cliente']").blur(function(){	
-	       
-	        var nombre_cliente = $(this).val();		
-	        var dataString = 'nombre_client='+nombre_cliente;
-	 
-	        $.ajax({
-	            type: "POST",
-	            url: "index.php",
-	            data: dataString,
-	            success: function(data) {
-	                $('#result-username').fadeIn(1000).html(data);
-	            }
-	        });
+$(document).ready(function(){	
+	$("input[name='usuario_cliente']").blur(function(){		       
+		 var xhttp = new XMLHttpRequest();
+		 usuario_cliente=$(this).val();
+		  xhttp.onreadystatechange = function() {    
+		    if (this.readyState == 4 ) {      
+				var devuelvo = this.responseText;
+if(devuelvo == '1'){
+	$("input[name='usuario_cliente']").val('');
+	document.getElementById("result-username").innerHTML="<span class=\"alerta\">Usuario ya existente, escoja otro</span>";
+} else {
+}
+		    }   
+		  };
+		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  xhttp.send ("usuario_cliente="+usuario_cliente);	 
 	    });              
-	});  
+});  
+
+$(document).ready(function(){	
+	$("input[name='email_cliente']").blur(function(){		       
+		 var xhttp = new XMLHttpRequest();
+		 email_cliente=$(this).val();
+		  xhttp.onreadystatechange = function() {    
+		    if (this.readyState == 4 ) {
+				var devuelvomail = this.responseText;
+				if(devuelvomail == '1'){
+					$("input[name='email_cliente']").val('');
+
+					document.getElementById("result-email").innerHTML="<span class=\"alerta\">Este e-mail ya dispone de una tienda</span>";
+				} else {
+					document.getElementById("result-email").innerHTML="";
+
+				}
+		    }   
+		  };
+		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  xhttp.send ("email_cliente="+email_cliente);	 
+	    });              
+});  
+
 {/literal}
 </script>
     </body>

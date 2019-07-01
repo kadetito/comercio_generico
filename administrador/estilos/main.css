@@ -2,7 +2,11 @@
 html, body {
   font-family: 'Open Sans', sans-serif;
 }
-
+.error {
+      color: red !important;
+     font-weight:bold;
+   }
+.alerta{color:red;}
 .fghj .card{margin-bottom:14px;}
 .fghj .card-header{font-size:12px;padding:6px;text-transform:uppercase;}
 .fghj .card-body{padding:14px;font-size:16px;}

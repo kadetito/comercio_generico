@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-01 00:07:11
+/* Smarty version 3.1.33, created on 2019-07-01 23:01:20
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d19328f5ccc57_66209472',
+  'unifunc' => 'content_5d1a74a0c24868_84734525',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1561930546,
+      1 => 1562014796,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d19328f5ccc57_66209472 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d1a74a0c24868_84734525 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="utf-8">
@@ -57,17 +57,17 @@ function content_5d19328f5ccc57_66209472 (Smarty_Internal_Template $_smarty_tpl)
     </head>
     <body><div id="democon"></div>
 <div class="container">
-<form id="contact" action="#">
+<form id="contact" name="form" action="#">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
     <div>
         <h3><span class="texticon"><i class="fas fa-folder-plus"></i> Nueva tienda</span><span class="icontext"><i class="fas fa-folder-plus fa-2x"></i></span></h3>
 
         <section>       <h4 class="displaywhen">Nueva tienda</h4>
             <label for="tienda_nombre">Nombre del Comercio</label>
-            <input id="tienda_nombre" name="tienda_nombre" type="text" class="required">
+            <input id="tienda_nombre" placeholder="" name="tienda_nombre" type="text" class="required">
             <label for="id_tipotienda">Qué necesita vender?</label>
             
-            <select id="id_tipotienda" name="id_tipotienda" class="form-control required">
+            <select id="id_tipotienda"  placeholder="" name="id_tipotienda" class="form-control required">
             <option value="">Seleccione el tipo de comercio</option>
             <?php echo $_smarty_tpl->tpl_vars['bucleTiposTiendaCheckbox']->value;?>
 
@@ -80,8 +80,7 @@ function content_5d19328f5ccc57_66209472 (Smarty_Internal_Template $_smarty_tpl)
             </ul>
          </div>
          <div class="form-group">
-            <label for="usuario_cliente">Nombre de usuario<div id="result-username"><?php echo $_smarty_tpl->tpl_vars['resu']->value;?>
-</div></label>
+            <label for="usuario_cliente">Nombre de usuario<div id="result-username"></div></label>
             <input id="usuario_cliente" name="usuario_cliente" type="text" value="" class="required">
             <label for="password_cliente">Password</label>
             <input id="password_cliente" name="password_cliente" type="text"  value="" class="required password">
@@ -94,7 +93,7 @@ function content_5d19328f5ccc57_66209472 (Smarty_Internal_Template $_smarty_tpl)
             <input id="nombre_cliente" name="nombre_cliente" type="text" class="required">
             <label for="apellidos_cliente">Apellidos</label>
             <input id="apellidos_cliente" name="apellidos_cliente" type="text" class="required">
-            <label for="email_cliente">Email</label>
+            <label for="email_cliente">Email<div id="result-email"></div></label>
             <input id="email_cliente" name="email_cliente" type="text" class="required email">
             <label for="dni_cliente">DNI/NIF</label>
             <input id="dni_cliente" name="dni_cliente" type="text" value="" class="required">
@@ -240,29 +239,50 @@ $(document).ready(function(){
 	});
 });  
 
-$(document).ready(function(){
-	  $("#nombre_cliente").blur(function(){
-	    alert("This input field has lost its focus.");
-	  });
-	});
-	
-$(document).ready(function(){	
 
-	$("input[name='usuario_cliente']").blur(function(){	
-	       
-	        var nombre_cliente = $(this).val();		
-	        var dataString = 'nombre_client='+nombre_cliente;
-	 
-	        $.ajax({
-	            type: "POST",
-	            url: "index.php",
-	            data: dataString,
-	            success: function(data) {
-	                $('#result-username').fadeIn(1000).html(data);
-	            }
-	        });
+$(document).ready(function(){	
+	$("input[name='usuario_cliente']").blur(function(){		       
+		 var xhttp = new XMLHttpRequest();
+		 usuario_cliente=$(this).val();
+		  xhttp.onreadystatechange = function() {    
+		    if (this.readyState == 4 ) {      
+				var devuelvo = this.responseText;
+if(devuelvo == '1'){
+	$("input[name='usuario_cliente']").val('');
+	document.getElementById("result-username").innerHTML="<span class=\"alerta\">Usuario ya existente, escoja otro</span>";
+} else {
+}
+		    }   
+		  };
+		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  xhttp.send ("usuario_cliente="+usuario_cliente);	 
 	    });              
-	});  
+});  
+
+$(document).ready(function(){	
+	$("input[name='email_cliente']").blur(function(){		       
+		 var xhttp = new XMLHttpRequest();
+		 email_cliente=$(this).val();
+		  xhttp.onreadystatechange = function() {    
+		    if (this.readyState == 4 ) {
+				var devuelvomail = this.responseText;
+				if(devuelvomail == '1'){
+					$("input[name='email_cliente']").val('');
+
+					document.getElementById("result-email").innerHTML="<span class=\"alerta\">Este e-mail ya dispone de una tienda</span>";
+				} else {
+					document.getElementById("result-email").innerHTML="";
+
+				}
+		    }   
+		  };
+		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  xhttp.send ("email_cliente="+email_cliente);	 
+	    });              
+});  
+
 
 </script>
     </body>
