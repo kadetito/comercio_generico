@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-01 23:01:20
+/* Smarty version 3.1.33, created on 2019-07-02 18:49:59
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d1a74a0c24868_84734525',
+  'unifunc' => 'content_5d1b8b375c5529_06078726',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1562014796,
+      1 => 1562086169,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d1a74a0c24868_84734525 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d1b8b375c5529_06078726 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="utf-8">
@@ -113,7 +113,7 @@ function content_5d1a74a0c24868_84734525 (Smarty_Internal_Template $_smarty_tpl)
 
 
         <section><h4 class="displaywhen">Dominio y Servidor</h4>
-            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="43445454e" class="required" />
+            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
 				<option value="http://">http://</option>

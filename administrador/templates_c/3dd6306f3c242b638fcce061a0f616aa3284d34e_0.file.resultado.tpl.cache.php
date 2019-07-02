@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-01 23:01:00
+/* Smarty version 3.1.33, created on 2019-07-02 18:49:58
   from 'C:\AppServ\www\comercio_generico\administrador\templates\resultado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d1a748cb37c06_91704279',
+  'unifunc' => 'content_5d1b8b3660b842_75075550',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d1a748cb37c06_91704279 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
+function content_5d1b8b3660b842_75075550 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '3486179835d1b8b3641e548_88017218';
 ?>
 <html>
     <head>
@@ -82,8 +82,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">ID de la tienda</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'idtienda\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'idtienda\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -92,8 +92,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Nombre</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'tiendanombre\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'tiendanombre\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -104,8 +104,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Tipo: </h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombretipotienda\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombretipotienda\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -114,8 +114,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Fecha de alta</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Fechaalta\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Fechaalta\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -126,10 +126,10 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Nombre Propietario</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombrecliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
- <?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'apellidoscliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombrecliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
+ <?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'apellidoscliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -138,8 +138,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">DNI</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'dnicliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'dnicliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -150,8 +150,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Email: </h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Emailcliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Emailcliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -160,8 +160,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Dominio</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Dominio\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Dominio\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -172,8 +172,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Usuario</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Usuariocliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Usuariocliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -182,8 +182,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Password</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Passwordcliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Passwordcliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -197,8 +197,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Uso de friendly URL</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Friendly\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Friendly\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -207,8 +207,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Protocolo preferente</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Protocolopreferente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Protocolopreferente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -218,8 +218,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Servidor</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Rutaservidor\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Rutaservidor\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -228,8 +228,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Uso de prefijo www</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Usowww\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Usowww\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -240,8 +240,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Estructura</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Nombreestructura\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Nombreestructura\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -250,8 +250,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Estilo</h5>
 				<div class="card-body">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'Nombreestil\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'Nombreestil\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -263,8 +263,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Idiomas</h5>
 				<div class="card-body minj">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomas\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomas\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -273,8 +273,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Formas de pago</h5>
 				<div class="card-body minj">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'buclePagos\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'buclePagos\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -283,8 +283,8 @@ $_smarty_tpl->compiled->nocache_hash = '17867806625d1a748ca5ce82_76479204';
 			<div class="card">
 				<h5 class="card-header">Modalidades</h5>
 				<div class="card-body minj">
-					<p class="card-text"><?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidades\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+					<p class="card-text"><?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidades\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 </p>
 				</div>
 			</div>
@@ -328,8 +328,8 @@ $(document).ready(function(){
 		  if ( foo == "bar" ) {
 		    var isGood=confirm('Se dispone a cancelar su tienda, puede volver a crearla de nuevo si lo desea');
 		    if (isGood) {
-		    	var id_tien="<?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'idtienda\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+		    	var id_tien="<?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'idtienda\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 ";	
 		        var xmlhttp = new XMLHttpRequest();
 		        xmlhttp.open("GET", "workers/cancelar.worker.php?id_tien=" + id_tien, true);
@@ -349,11 +349,11 @@ $(document).ready(function(){
 			  if ( foot == "bart" ) {
 			    var isGoodt=confirm('Su tienda será creada a continuación');
 			    if (isGoodt) {
-			    	var id_tien="<?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'idtienda\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+			    	var id_tien="<?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'idtienda\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 ";	
-			    	var dni="<?php echo '/*%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/<?php echo $_smarty_tpl->tpl_vars[\'dnicliente\']->value;?>
-/*/%%SmartyNocache:17867806625d1a748ca5ce82_76479204%%*/';?>
+			    	var dni="<?php echo '/*%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/<?php echo $_smarty_tpl->tpl_vars[\'dnicliente\']->value;?>
+/*/%%SmartyNocache:3486179835d1b8b3641e548_88017218%%*/';?>
 ";	
 			    	var _0xc9ac=["\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72"];var rnd=Math[_0xc9ac[1]]((Math[_0xc9ac[0]]()* 100000)+ 1);var rnd2=Math[_0xc9ac[1]]((Math[_0xc9ac[0]]()* 100000)+ 1)
 			    	var _0x1913=["\x47\x45\x54","\x77\x6F\x72\x6B\x65\x72\x73\x2F\x75\x70\x64\x61\x74\x65\x2E\x77\x6F\x72\x6B\x65\x72\x2E\x70\x68\x70\x3F\x69\x64\x5F\x74\x69\x65\x6E\x3D","\x6F\x70\x65\x6E","\x73\x65\x6E\x64"];var xmlhttp= new XMLHttpRequest();xmlhttp[_0x1913[2]](_0x1913[0],_0x1913[1]+ id_tien,true);xmlhttp[_0x1913[3]]()

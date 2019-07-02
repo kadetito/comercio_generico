@@ -33,9 +33,10 @@ class ClaseEliminar {
 
 /**
  * 
- * @param unknown $id_tiend
+ * 
  */    
-    public function eliminarRegistro($id_tienda){
+//     public function eliminarRegistro($id_tienda){
+    public static function eliminarRegistro($id_tienda){
         ChromePhp::log($id_tienda);
         $conexion = new Conexion();
 

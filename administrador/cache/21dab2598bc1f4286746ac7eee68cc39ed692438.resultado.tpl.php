@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-01 23:01:00
+/* Smarty version 3.1.33, created on 2019-07-02 18:49:58
   from 'C:\AppServ\www\comercio_generico\administrador\templates\resultado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d1a748cb89d48_87703029',
+  'unifunc' => 'content_5d1b8b366a91f6_67572922',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d1a748cb89d48_87703029 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d1b8b366a91f6_67572922 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="utf-8">

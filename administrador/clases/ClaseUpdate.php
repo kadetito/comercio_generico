@@ -33,7 +33,7 @@ class ClaseUpdate {
 
 /**
  * 
- * @param unknown $id_tiend
+ * 
  */    
         public static function updateRegistro($id_tienda){
             ChromePhp::log($id_tienda);

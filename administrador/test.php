@@ -1,54 +1,54 @@
+<?php session_start();
+/**
+ * 
+ * EVENTOS 
+ * INDEX > index.php > index.tpl
+ * 
+ * @author kadet
+ * 
+ */
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+//conexion a bbdd--------------------------------------------------
+require_once 'path.php';
+include 'ChromePhp.php';
+require_once ROOT_DIR.'/datos/conexion/conexion.php';
+//libreria smarty y variables de inicio----------------------------
+require ROOT_DIR.'/smarty/libs/Smarty.class.php';
+require ROOT_DIR.'/includes/smartyvariablesinicio.php';
+//determina si se ha iniciado la sesion----------------------------
+require ("includes/sesion.php");
+//CLASES-----------------------------------------------------------
+//     //settings
+//     require (ROOT_DIR.'/clases/settings.class.php');
+//     //datosUsuarioLogeado
+//     require (ROOT_DIR.'/clases/usuario.class.php');
 
-<script language="javascript">
-$(document).ready(function(){
-    $("#marca").on('change', function () {
-        $("#marca option:selected").each(function () {
-            elegido=$(this).val();
-            $.post("index.php", { elegido: elegido }, function(data){
-                $("#modelo").html(data);
-            });			
-        });
-   });
-});
-</script>
-</head>
 
-<body>
+     require (ROOT_DIR.'/clases/tienda.php');
+     require (ROOT_DIR.'/clases/settingsuser.php');
+     require (ROOT_DIR.'/clases/settingshost.php');
+     require (ROOT_DIR.'/clases/idiomas.php');
+     require (ROOT_DIR.'/clases/cliente.php');
+     require (ROOT_DIR.'/clases/formaspago.php');
+     require (ROOT_DIR.'/clases/tipostienda.php');
+     require (ROOT_DIR.'/clases/host.php');
+     require (ROOT_DIR.'/clases/modalidades.php');
+     require (ROOT_DIR.'/clases/estructuras.php');
+     require (ROOT_DIR.'/clases/estilos.php');
+     require (ROOT_DIR.'/clases/ClaseGetUsuario.php');
+     require (ROOT_DIR.'/clases/ClaseLogs.php');
+     require (ROOT_DIR.'/clases/ClaseEliminar.php');
+     
+// //WORKERS----------------------------------------------------------  
+//     //settings
+    require (ROOT_DIR.'/workers/test.worker.php');
 
-    
-    <div class="row">
-        <div id="content" class="col-lg-12">
-            <form class="row" action="" method="post">
-                <div class="form-group col-lg-3">
-                    <label for="marca">Marca</label>
-                    <select name="marca" id="marca" class="form-control">
-                        <option value="1">Renault</option>
-                        <option value="2">Seat</option>
-                        <option value="3">Peugeot</option>
-                    </select>
-                </div>
-                <div class="form-group col-lg-3">
-                    <label for="modelo">Modelo</label>
-                    <select name="modelo" id="modelo" class="form-control">
-                        <option value="1">4</option>
-                        <option value="2">5</option>
-                        <option value="3">7</option>
-                        <option value="4">21</option>
-                        <option value="5">Scennic</option>
-                        <option value="6">Traffic</option>
-                    </select>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-    
-</body>
-</html>
+
+//$smarty->assign("paginador",$paginador,true); 
+ 
+//=========================================================
+// template a usar
+//==========================================================
+$smarty->display(ROOT_DIR.'/templates/test.tpl');

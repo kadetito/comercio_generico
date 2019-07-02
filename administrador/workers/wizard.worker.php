@@ -176,6 +176,9 @@ if(isset($idEstructuraInstant)){
         $get_InsertTienda->inserTotalTienda();       
         $id_tien = $get_InsertTienda->getIdTienda();
 
+        $descripcion_log_A="Inserción de nueva tienda no activa";
+        $get_InsertTienda = new ClaseLogs($descripcion_log_A,null,$tienda_nombre,$id_tien);
+        $get_InsertTienda->insertLog();       
         
         $_SESSION['id_tien'] = $id_tien;
 

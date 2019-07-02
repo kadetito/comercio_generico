@@ -10,41 +10,57 @@ mb_http_output('UTF-8');
  *
  */
 
-class Tienda {
+class ClaseLogs {
     
     //defino las propiedades
-    private $id_tienda;
+    private $id_log;
 
-    const TABLA = 'generica_tienda'; //constante del nombre de la tabla
+    const TABLA = 'generica_logs'; //constante del nombre de la tabla
     
     //metodos getters y setters
+    public function getIdLog(){
+        return $this->id_log;
+    }
     public function getIdTienda(){
         return $this->id_tienda;
     }
     public function getNombreTienda(){
         return $this->tienda_nombre;
     }
-    public function getTipoTiendaTienda(){
-        return $this->id_tipotienda;
+    public function getFechaLog(){
+        return $this->fecha_log;
+    }
+    public function getDescripcion(){
+        return $this->descripcion_log;
     }
     
+    public function setIdLog(){
+        $this->id_log = $id_log;
+    }
     public function setIdTienda(){
         $this->id_tienda = $id_tienda;
     }
     public function setNombreTienda(){
         $this->tienda_nombre = $tienda_nombre;
     }
-    public function setTipoTiendaTienda(){
-        $this->id_tipotienda = $id_tipotienda;
+    public function setFechaLog(){
+        $this->fecha_log = $fecha_log;
+    }
+    public function setDescripcion(){
+        $this->descripcion_log = $descripcion_log;
     }
     
     
+
+    
     //constructor
-    public function __construct($id_tipotienda,$tienda_nombre,$id_tienda=null)
+    public function __construct($descripcion_log,$fecha_log,$tienda_nombre,$id_tienda,$id_log=null)
     {
+        $this->id_log = $id_log;
         $this->id_tienda = $id_tienda;
-        $this->id_tipotienda = $id_tipotienda;
         $this->tienda_nombre = $tienda_nombre;
+        $this->fecha_log = $fecha_log;
+        $this->descripcion_log = $descripcion_log;
     }
     
     
@@ -124,26 +140,33 @@ class Tienda {
     // INSERT TOTAL
     // inserta todo el registro
     //**---------------------
-    public function inserTotalTienda(){
-        
+    
+    public function insertLog(){
+        try {
+            
         $conexion = new Conexion();
         $conexion->exec("SET NAMES 'utf8'");
-        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (id_tipotienda,tienda_nombre) VALUES (:id_tipotienda,:tienda_nombre)');     
-        $consulta->bindParam(':id_tipotienda', $this->id_tipotienda);
-        $consulta->bindParam(':tienda_nombre',  $this->tienda_nombre);        
-
-        $consulta->execute();
-        $this->id_tienda= $conexion->lastInsertId();        
-        //devuelvo el ID del registro
-        $registros = $conexion->lastInsertId();        
-        return $registros;
+        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (descripcion_log,fecha_log,tienda_nombre,id_tienda) VALUES (:descripcion_log,:fecha_log,:tienda_nombre,:id_tienda)');
+        $consulta->bindParam(':id_tienda',  $this->id_tien);
+        $consulta->bindParam(':tienda_nombre',  $this->tienda_nombre);
+        $consulta->bindParam(':fecha_log',  $this->fecha_log);
+        $consulta->bindParam(':descripcion_log',  $this->descripcion_log);
         
+        ChromePhp::log($this->id_tien);
+        ChromePhp::log($this->tienda_nombre);
+        ChromePhp::log($this->fecha_log);
+        ChromePhp::log($this->descripcion_log);
+        
+        $consulta->execute();
+        $this->id_log= $conexion->lastInsertId();
+        echo "Successfully added the new user ";
+        } catch (PDOException $e) {
+            echo "DataBase Error: The user could not be added.<br>".$e->getMessage();
+        } catch (Exception $e) {
+            echo "General Error: The user could not be added.<br>".$e->getMessage();
+        }
     }
     
-
-    
-
-  
     
 //     public function eliminarRegistroCat($id_cate){
 //         //                echo '<script>alert("hola")</script>';

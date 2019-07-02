@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-01 23:01:20
+/* Smarty version 3.1.33, created on 2019-07-02 18:49:59
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d1a74a0bf9994_66417783',
+  'unifunc' => 'content_5d1b8b37593ae6_98743906',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1562014796,
+      1 => 1562086169,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d1a74a0bf9994_66417783 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '6531443795d1a74a0b97d68_13754299';
+function content_5d1b8b37593ae6_98743906 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '10133362665d1b8b37515916_22179749';
 ?>
 <html>
     <head>
@@ -81,15 +81,15 @@ $_smarty_tpl->compiled->nocache_hash = '6531443795d1a74a0b97d68_13754299';
             
             <select id="id_tipotienda"  placeholder="" name="id_tipotienda" class="form-control required">
             <option value="">Seleccione el tipo de comercio</option>
-            <?php echo '/*%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
-/*/%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/';?>
+            <?php echo '/*%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
+/*/%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/';?>
 
             </select>
         <h4>Idiomas</h4>
         <div class="form-group idioms">
 			<ul class="unstyled centered">
-            <?php echo '/*%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
-/*/%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/';?>
+            <?php echo '/*%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
+/*/%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/';?>
 
             </ul>
          </div>
@@ -116,12 +116,12 @@ $_smarty_tpl->compiled->nocache_hash = '6531443795d1a74a0b97d68_13754299';
 
         <section><h4 class="displaywhen">Características</h4>
         <h4>Escoje qué características tendrán los productos de la tienda</h4>
-        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
-/*/%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/';?>
+        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
+/*/%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/';?>
 </ul>
         <h4>Escoje los tipos de pago que usarás</h4>
-        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
-/*/%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/';?>
+        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
+/*/%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/';?>
 </ul>
 
         </section>
@@ -129,7 +129,7 @@ $_smarty_tpl->compiled->nocache_hash = '6531443795d1a74a0b97d68_13754299';
 
 
         <section><h4 class="displaywhen">Dominio y Servidor</h4>
-            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="43445454e" class="required" />
+            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
 				<option value="http://">http://</option>
@@ -184,8 +184,8 @@ $_smarty_tpl->compiled->nocache_hash = '6531443795d1a74a0b97d68_13754299';
         
         
 <div class="ex3">
-			<?php echo '/*%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
-/*/%%SmartyNocache:6531443795d1a74a0b97d68_13754299%%*/';?>
+			<?php echo '/*%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
+/*/%%SmartyNocache:10133362665d1b8b37515916_22179749%%*/';?>
 
 </div>        
 
