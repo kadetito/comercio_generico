@@ -201,8 +201,8 @@ class SettingsEstructuraGenerica {
         $this->id_tienda = $id_tienda;
         $this->id_estruc = $id_estruc;
         
-        ChromePhp::log("B id tienda".$this->id_tienda);
-        ChromePhp::log("B id estru".$this->id_estruc);
+//         ChromePhp::log("B id tienda".$this->id_tienda);
+//         ChromePhp::log("B id estru".$this->id_estruc);
         
     }
     
@@ -221,8 +221,8 @@ class SettingsEstructuraGenerica {
         $consulta->bindParam(':id_tienda',  $this->id_tienda);
         $consulta->bindParam(':id_estruc',$this->id_estruc);
 
-        ChromePhp::log("C id tienda".$this->id_tienda);
-        ChromePhp::log("C id estru".$this->id_estruc);
+//         ChromePhp::log("C id tienda".$this->id_tienda);
+//         ChromePhp::log("C id estru".$this->id_estruc);
         $consulta->execute();
         $this->id_estructura= $conexion->lastInsertId();
     }

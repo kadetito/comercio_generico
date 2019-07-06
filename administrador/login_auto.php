@@ -2,8 +2,9 @@
 /**
  * 
  * EVENTOS 
- * INDEX > index.php > index.tpl
- * 
+ * LOGIN > login_auto.php > login_auto.tpl
+ * archivo que tramita el login automático después de
+ * la creación de la tienda/web y conduce al perfil de usuario
  * @author kadet
  * 
  */
@@ -20,12 +21,6 @@ require ROOT_DIR.'/includes/smartyvariablesinicio.php';
 //determina si se ha iniciado la sesion----------------------------
 require ("includes/sesion.php");
 //CLASES-----------------------------------------------------------
-//     //settings
-//     require (ROOT_DIR.'/clases/settings.class.php');
-//     //datosUsuarioLogeado
-//     require (ROOT_DIR.'/clases/usuario.class.php');
-
-
      require (ROOT_DIR.'/clases/clasetienda.php');
      require (ROOT_DIR.'/clases/settingsuser.php');
      require (ROOT_DIR.'/clases/settingshost.php');
@@ -38,9 +33,7 @@ require ("includes/sesion.php");
      require (ROOT_DIR.'/clases/estructuras.php');
      require (ROOT_DIR.'/clases/estilos.php');
 // //WORKERS----------------------------------------------------------  
-//     //settings
     require (ROOT_DIR.'/workers/loginauto.worker.php');
-
 
 //$smarty->assign("paginador",$paginador,true); 
  

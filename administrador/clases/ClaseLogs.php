@@ -22,7 +22,7 @@ class ClaseLogs {
         return $this->id_log;
     }
     public function getIdTienda(){
-        return $this->id_tienda;
+        return $this->id_tien;
     }
     public function getNombreTienda(){
         return $this->tienda_nombre;
@@ -38,7 +38,7 @@ class ClaseLogs {
         $this->id_log = $id_log;
     }
     public function setIdTienda(){
-        $this->id_tienda = $id_tienda;
+        $this->id_tien = $id_tien;
     }
     public function setNombreTienda(){
         $this->tienda_nombre = $tienda_nombre;
@@ -50,14 +50,14 @@ class ClaseLogs {
         $this->descripcion_log = $descripcion_log;
     }
     
-    
+
 
     
     //constructor
-    public function __construct($descripcion_log,$fecha_log,$tienda_nombre,$id_tienda,$id_log=null)
+    public function __construct($descripcion_log,$fecha_log,$tienda_nombre,$id_tien,$id_log=null)
     {
         $this->id_log = $id_log;
-        $this->id_tienda = $id_tienda;
+        $this->id_tien = $id_tien;
         $this->tienda_nombre = $tienda_nombre;
         $this->fecha_log = $fecha_log;
         $this->descripcion_log = $descripcion_log;
@@ -146,8 +146,8 @@ class ClaseLogs {
             
         $conexion = new Conexion();
         $conexion->exec("SET NAMES 'utf8'");
-        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (descripcion_log,fecha_log,tienda_nombre,id_tienda) VALUES (:descripcion_log,:fecha_log,:tienda_nombre,:id_tienda)');
-        $consulta->bindParam(':id_tienda',  $this->id_tien);
+        $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (descripcion_log,fecha_log,tienda_nombre,id_tienda) VALUES (:descripcion_log,:fecha_log,:tienda_nombre,:id_tien)');
+        $consulta->bindParam(':id_tien',  $this->id_tien);
         $consulta->bindParam(':tienda_nombre',  $this->tienda_nombre);
         $consulta->bindParam(':fecha_log',  $this->fecha_log);
         $consulta->bindParam(':descripcion_log',  $this->descripcion_log);

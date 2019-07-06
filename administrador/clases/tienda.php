@@ -42,9 +42,9 @@ class Tienda {
     //constructor
     public function __construct($id_tipotienda,$tienda_nombre,$id_tienda=null)
     {
-        $this->id_tienda = $id_tienda;
-        $this->id_tipotienda = $id_tipotienda;
+        $this->id_tienda = $id_tienda; 
         $this->tienda_nombre = $tienda_nombre;
+        $this->id_tipotienda = $id_tipotienda;
     }
     
     
@@ -131,13 +131,12 @@ class Tienda {
         $consulta = $conexion->prepare('INSERT INTO '.self::TABLA.' (id_tipotienda,tienda_nombre) VALUES (:id_tipotienda,:tienda_nombre)');     
         $consulta->bindParam(':id_tipotienda', $this->id_tipotienda);
         $consulta->bindParam(':tienda_nombre',  $this->tienda_nombre);        
-
         $consulta->execute();
         $this->id_tienda= $conexion->lastInsertId();        
         //devuelvo el ID del registro
         $registros = $conexion->lastInsertId();        
         return $registros;
-        
+       
     }
     
 

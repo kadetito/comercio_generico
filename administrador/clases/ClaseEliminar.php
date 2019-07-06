@@ -5,7 +5,7 @@ mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
 /**
- * Clase que gestiona la tienda
+ * Clase que elimina registros
  * @author kadet
  *
  */
@@ -37,7 +37,7 @@ class ClaseEliminar {
  */    
 //     public function eliminarRegistro($id_tienda){
     public static function eliminarRegistro($id_tienda){
-        ChromePhp::log($id_tienda);
+
         $conexion = new Conexion();
 
         

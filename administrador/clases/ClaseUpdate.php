@@ -36,7 +36,7 @@ class ClaseUpdate {
  * 
  */    
         public static function updateRegistro($id_tienda){
-            ChromePhp::log($id_tienda);
+//             ChromePhp::log($id_tienda);
             $conexion = new Conexion();
             $conexion->exec("SET NAMES 'utf8'");
            

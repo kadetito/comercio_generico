@@ -10,7 +10,7 @@ mb_http_output('UTF-8');
  *
  */
 
-class ClaseGetUsuario {
+class ClaseValidaciones {
     
     //defino las propiedades
     private $id_setuser;
@@ -84,12 +84,41 @@ class ClaseGetUsuario {
         $this->password_cliente     = $password_cliente;
         
     }
+    
+    /**
+     * obtener nombres de usuario
+     */
+    
+    public static function consultaValidaUsersIDTienda($usuario_cliente){
+            $conexion = new conexion();
+            $conexion->exec("SET NAMES 'utf8'");
+            $consulta = $conexion->prepare("SELECT * FROM generica_settings_user WHERE usuario_cliente= :usuario_cliente ");
+            $consulta->execute(array(':usuario_cliente' => $usuario_cliente));
+            $consulta->bindParam(':usuario_cliente', $usuario_cliente, PDO::PARAM_STR);
+            $registro = $consulta->fetch();
 
+            if ($registro === false) {
+                throw new Exception($registro->error);
+            } else {
+                return new self(
+                    $registro['password_cliente'],
+                    $registro['usuario_cliente'],
+                    $registro['email_cliente'],
+                    $registro['dni_cliente'],
+                    $registro['apellidos_cliente'],
+                    $usuario_cliente,
+                    $registro['id_tienda'],
+                    $registro['id_setuser']
+                    );
+            }
+        }
+        
+    
     /**
      * obtener nombres de usuario
      */
 
-    public static function consultaUsers($usuario_cliente){       
+    public static function consultaValidaUsers($usuario_cliente){       
             $conexion = new conexion();
             $conexion->exec("SET NAMES 'utf8'");
             $consulta = $conexion->prepare("SELECT * FROM generica_settings_user WHERE usuario_cliente= :usuario_cliente ");
@@ -97,7 +126,7 @@ class ClaseGetUsuario {
             $consulta->bindParam(':usuario_cliente', $usuario_cliente, PDO::PARAM_STR);
             $registro = $consulta->fetch();
             
-            
+            ChromePhp::log("YO QUIERO BAILAR: ".$usuario_cliente);
             if ($registro === false) {
                 throw new Exception($registro->error);
             } else {

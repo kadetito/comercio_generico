@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-30 17:13:26
+/* Smarty version 3.1.33, created on 2019-07-04 19:53:11
   from 'C:\AppServ\www\comercio_generico\administrador\templates\login_auto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d18d196799ca7_33524548',
+  'unifunc' => 'content_5d1e3d0780f610_46021658',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d18d196799ca7_33524548 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d1e3d0780f610_46021658 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta charset="utf-8">

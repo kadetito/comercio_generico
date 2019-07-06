@@ -3,10 +3,6 @@ require_once '../path.php';
 require_once ROOT_DIR.'/datos/conexion/conexion.php';
 require (ROOT_DIR.'/clases/estilos.php');
 
-// ChromePhp::log($idEstructuraInstant);
-// ChromePhp::warn('something went wrong!');
-
-
 $idEstructuraInstant = filter_input(INPUT_POST, 'elegido');
 
 //si recibo el parametreo id estructura en tiempo real via AJAX

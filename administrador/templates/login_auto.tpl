@@ -48,8 +48,6 @@
 		<script src='javascript/jquery.steps.min.js'></script>
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
-	
-		
-		
+
     </body>
 </html>

@@ -5,12 +5,12 @@ mb_internal_encoding('UTF-8');
 mb_http_output('UTF-8');
 
 /**
- * Clase que gestiona la tienda
+ * Clase que gestiona Perfil
  * @author kadet
  *
  */
 
-class ClaseGetUsuario {
+class ClaseGetPerfil {
     
     //defino las propiedades
     private $id_setuser;

@@ -196,8 +196,8 @@ class ClaseTienda {
                 $registro['tienda_nombre'],
                 $idTienda);
             
-            ChromePhp::log("hhhhh");
-            ChromePhp::log($idTienda);
+//             ChromePhp::log("hhhhh");
+//             ChromePhp::log($idTienda);
         } else {
 
 //                 throw new Exception('Error en prepare: ' . $registro->error);

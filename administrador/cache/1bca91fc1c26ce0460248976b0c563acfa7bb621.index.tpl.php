@@ -1,25 +1,26 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-02 18:49:59
+/* Smarty version 3.1.33, created on 2019-07-04 22:08:58
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d1b8b375c5529_06078726',
+  'unifunc' => 'content_5d1e5cda65b1c2_27196528',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1562086169,
+      1 => 1562270522,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d1b8b375c5529_06078726 (Smarty_Internal_Template $_smarty_tpl) {
-?><html>
+function content_5d1e5cda65b1c2_27196528 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -55,7 +56,8 @@ function content_5d1b8b375c5529_06078726 (Smarty_Internal_Template $_smarty_tpl)
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     </head>
-    <body><div id="democon"></div>
+    <body><?php echo $_smarty_tpl->tpl_vars['errorLocalizado']->value;?>
+<div id="democon"></div>
 <div class="container">
 <form id="contact" name="form" action="#">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
@@ -95,8 +97,8 @@ function content_5d1b8b375c5529_06078726 (Smarty_Internal_Template $_smarty_tpl)
             <input id="apellidos_cliente" name="apellidos_cliente" type="text" class="required">
             <label for="email_cliente">Email<div id="result-email"></div></label>
             <input id="email_cliente" name="email_cliente" type="text" class="required email">
-            <label for="dni_cliente">DNI/NIF</label>
-            <input id="dni_cliente" name="dni_cliente" type="text" value="" class="required">
+            <label for="dni_cliente">DNI/NIF <div id="result-dni"></div></label>
+            <input id="dni_cliente" name="dni_cliente" type="text" value=""  class="identificacionES required">
         </section>
         <h3><span class="texticon"><i class="fa fa-tasks"></i> Características</span><span class="icontext"><i class="fa fa-tasks fa-2x"></i></span></h3>
 
@@ -113,7 +115,7 @@ function content_5d1b8b375c5529_06078726 (Smarty_Internal_Template $_smarty_tpl)
 
 
         <section><h4 class="displaywhen">Dominio y Servidor</h4>
-            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="" class="required" />
+            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="43445454e" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
 				<option value="http://">http://</option>
@@ -280,6 +282,30 @@ $(document).ready(function(){
 		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
 		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		  xhttp.send ("email_cliente="+email_cliente);	 
+	    });              
+});  
+
+
+$(document).ready(function(){	
+	$("input[name='dni_cliente']").blur(function(){		       
+		 var xhttp = new XMLHttpRequest();
+		 dni_cliente=$(this).val();
+		  xhttp.onreadystatechange = function() {    
+		    if (this.readyState == 4 ) {
+				var devuelvodni = this.responseText;
+				if(devuelvodni == '1'){
+					$("input[name='dni_cliente']").val('');
+
+					document.getElementById("result-dni").innerHTML="<span class=\"alerta\">Este DNI ya dispone de una tienda</span>";
+				} else {
+					document.getElementById("result-dni").innerHTML="";
+
+				}
+		    }   
+		  };
+		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  xhttp.send ("dni_cliente="+dni_cliente);	 
 	    });              
 });  
 

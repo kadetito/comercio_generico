@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -38,9 +39,10 @@
 <div class="container fghj">
     <div>
         <h3><span class="texticon"><i class="fas fa-folder-plus"></i> Nueva tienda</span><span class="icontext"><i class="fas fa-folder-plus fa-2x"></i></span></h3>
-        <section>       
+        <section> 
+        
+        {$errorLocalizado}      
           <h4 class="displaywhen">Nueva tienda</h4>
-          
           
           <h5>Esta es la configuración elegida para su tienda. Recuerde que algunas características las puede modificar desde su menú de administración.</h5>
           
@@ -134,9 +136,7 @@
 			</div>
 		</div>
 	</div>      
-	
-	
-	      
+
      <div class="row">
 		<div class="col-md-3">
 			<div class="card">

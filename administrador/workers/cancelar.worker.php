@@ -1,13 +1,14 @@
 <?php session_start();
+/**
+ * la tienda no ha sido aceptada, se ha cancelado el proceso, por lo tanto borro los registros creados
+ * 
+ */
 require_once '../path.php';
 require_once ROOT_DIR.'/datos/conexion/conexion.php';
 require (ROOT_DIR.'/clases/ClaseEliminar.php');
 include '../ChromePhp.php';
 
-
 $id_tiend = filter_input(INPUT_GET, 'id_tien');
-
-
 
 //si recibo el parametreo id estructura en tiempo real via AJAX
 if(isset($id_tiend)){ 
@@ -18,7 +19,7 @@ if(isset($id_tiend)){
    unset($_SESSION['id_tien']);
 }
 else {
-    echo 'no hay valores';
+    echo 'no hay valores';//TODO 
 }
    
 

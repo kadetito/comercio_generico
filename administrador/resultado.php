@@ -1,8 +1,10 @@
 <?php session_start();
 /**
  * 
- * EVENTOS 
- * INDEX > index.php > index.tpl
+ * RESULTADO
+ * preview de la tienda/web una vez creada
+ *  
+ * RESULTADO > resultado.php > resultado.tpl
  * 
  * @author kadet
  * 
@@ -20,12 +22,6 @@ require ROOT_DIR.'/includes/smartyvariablesinicio.php';
 //determina si se ha iniciado la sesion----------------------------
 require ("includes/sesion.php");
 //CLASES-----------------------------------------------------------
-//     //settings
-//     require (ROOT_DIR.'/clases/settings.class.php');
-//     //datosUsuarioLogeado
-//     require (ROOT_DIR.'/clases/usuario.class.php');
-
-
      require (ROOT_DIR.'/clases/clasetienda.php');
      require (ROOT_DIR.'/clases/settingsuser.php');
      require (ROOT_DIR.'/clases/settingshost.php');
@@ -37,8 +33,9 @@ require ("includes/sesion.php");
      require (ROOT_DIR.'/clases/modalidades.php');
      require (ROOT_DIR.'/clases/estructuras.php');
      require (ROOT_DIR.'/clases/estilos.php');
+     require (ROOT_DIR.'/clases/ClaseValidaciones.php');
+     require (ROOT_DIR.'/clases/ClaseLogs.php');  
 // //WORKERS----------------------------------------------------------  
-//     //settings
     require (ROOT_DIR.'/workers/resultado.worker.php');
 
 

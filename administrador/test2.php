@@ -1,16 +1,11 @@
-<?php  
-var fruit = {"Apple":[{"variety":"Cox's Orange Pippin"},{"variety":"Granny Smith"},{"variety":"Red Delicious"}],"Banana":[{"variety":"Burro"},{"variety":"Cavendish"},{"variety":"Plantain"}],"Orange":[{"variety":"Blood"},{"variety":"Navel"},{"variety":"Valencia"}],"Pear":[{"variety":"Anjou"},{"variety":"Bartlett"},{"variety":"Comice"}]};
-// echo '<script>alert();</script>';
-// $dsn = "mysql:host=localhost;dbname=[DATABASE NAME HERE]";
-// $username = "[USERNAME HERE]";
-// $password = "[PASSWORD HERE]";
+<?php       
+require_once 'path.php';
+include 'ChromePhp.php';
+require_once ROOT_DIR.'/datos/conexion/conexion.php';
+require (ROOT_DIR.'/clases/ClaseValidaciones.php');
 
-// $pdo = new PDO($dsn, $username, $password);
+$usuario_cliente="e32e23e";
+$get_usersVali = ClaseValidaciones::consultaValidaUsersIDTienda($usuario_cliente);
+$UusersVali=$get_usersVali->getUsuarioclienteS();
 
-// $rows = array();
-// if(isset($_GET['fruitName'])) {
-//     $stmt = $pdo->prepare("SELECT variety FROM fruit WHERE name = ? ORDER BY variety");
-//     $stmt->execute(array($_GET['fruitName']));
-//     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// }
-// echo json_encode($rows);
+echo $UusersVali;

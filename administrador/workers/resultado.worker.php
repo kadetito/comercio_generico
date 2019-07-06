@@ -21,11 +21,11 @@ $Nombreestil        ='';
 $bucleIdiomas='';
 $buclePagos='';
 $bucleModalidades='';
-
+$errorLocalizado='';
 if (isset($_SESSION['id_tien'])){ 
     
 
-$idTienda = $_SESSION['id_tien'];
+    $idTienda = $_SESSION['id_tien'];ChromePhp::log($idTienda);
 //si recibo el parametreo id estructura en tiempo real via AJAX
 if($idTienda!=''){ 
     ChromePhp::log($idTienda);
@@ -33,45 +33,41 @@ if($idTienda!=''){
          * OBTENGO TIENDA
          * @var unknown $resultado
          */
-    $get_comer = ClaseTienda::consultaDetalle($idTienda);
-    $id_dtienda       =$get_comer->getIdTienda();
-    $tienda_nombre    =$get_comer->getNombreTienda();
-    $nombre_tipotienda=$get_comer->getTipoTienda();
-    $nombre_cliente=   $get_comer->getNomCliente();
-    $apellidos_cliente=$get_comer->getApeCliente();
-    $dni_cliente =     $get_comer->getDNICliente();
-    $E_mailcliente=         $get_comer->getEmailcliente();
-    $U_suariocliente=       $get_comer->getUsuariocliente();
-    $P_asswordcliente=      $get_comer->getPasswordcliente();
-    $F_echaalta=            $get_comer->getFechaalta();
-    $D_ominio=              $get_comer->getDominio();
-    $F_riendly=             $get_comer->getFriendly();
-    $P_rotocolopreferente=  $get_comer->getProtocolopreferente();
-    $R_utaservidor=         $get_comer->getRutaservidor();
-    $U_sowww=               $get_comer->getUsowww();
-    $N_ombreestructura=     $get_comer->getNombreestructura();
-    $N_ombreestil=          $get_comer->getNombreestil(); 
-    $idtienda.=$id_dtienda;
-    $tiendanombre.=$tienda_nombre;
-    $nombretipotienda.=$nombre_tipotienda;
-    $nombrecliente.=$nombre_cliente;
-    $apellidoscliente.=$apellidos_cliente;
-    $dnicliente.=$dni_cliente;
-    $Emailcliente.=          $E_mailcliente;
-    $Usuariocliente.=        $U_suariocliente;
-    $Passwordcliente.=       $P_asswordcliente;
-    $Fechaalta.=             $F_echaalta;
-    $Dominio.=               $D_ominio;
-    $Friendly.=              $F_riendly;
-    $Protocolopreferente.=   $P_rotocolopreferente;
-    $Rutaservidor.=          $R_utaservidor;
-    $Usowww.=                $U_sowww;
-    $Nombreestructura.=      $N_ombreestructura;
-    $Nombreestil.=           $N_ombreestil;   
-
-
-
-
+            $get_comer = ClaseTienda::consultaDetalle($idTienda);
+            $id_dtienda       =$get_comer->getIdTienda();
+            $tienda_nombre    =$get_comer->getNombreTienda();
+            $nombre_tipotienda=$get_comer->getTipoTienda();
+            $nombre_cliente=   $get_comer->getNomCliente();
+            $apellidos_cliente=$get_comer->getApeCliente();
+            $dni_cliente =     $get_comer->getDNICliente();
+            $E_mailcliente=         $get_comer->getEmailcliente();
+            $U_suariocliente=       $get_comer->getUsuariocliente();
+            $P_asswordcliente=      $get_comer->getPasswordcliente();
+            $F_echaalta=            $get_comer->getFechaalta();
+            $D_ominio=              $get_comer->getDominio();
+            $F_riendly=             $get_comer->getFriendly();
+            $P_rotocolopreferente=  $get_comer->getProtocolopreferente();
+            $R_utaservidor=         $get_comer->getRutaservidor();
+            $U_sowww=               $get_comer->getUsowww();
+            $N_ombreestructura=     $get_comer->getNombreestructura();
+            $N_ombreestil=          $get_comer->getNombreestil(); 
+            $idtienda.=$id_dtienda;
+            $tiendanombre.=$tienda_nombre;
+            $nombretipotienda.=$nombre_tipotienda;
+            $nombrecliente.=$nombre_cliente;
+            $apellidoscliente.=$apellidos_cliente;
+            $dnicliente.=$dni_cliente;
+            $Emailcliente.=          $E_mailcliente;
+            $Usuariocliente.=        $U_suariocliente;
+            $Passwordcliente.=       $P_asswordcliente;
+            $Fechaalta.=             $F_echaalta;
+            $Dominio.=               $D_ominio;
+            $Friendly.=              $F_riendly;
+            $Protocolopreferente.=   $P_rotocolopreferente;
+            $Rutaservidor.=          $R_utaservidor;
+            $Usowww.=                $U_sowww;
+            $Nombreestructura.=      $N_ombreestructura;
+            $Nombreestil.=           $N_ombreestil;   
 
     /**
      * OBTENGO BUCLE IDIOMAS
@@ -115,8 +111,9 @@ if($idTienda!=''){
     }
     endforeach;
 
+}
 
-}}
+}
 else {echo '<meta http-equiv="refresh" content="0;url=index.php">';}
 
 
@@ -145,4 +142,5 @@ $smarty->assign("Nombreestil",$Nombreestil,true);
 $smarty->assign("bucleIdiomas",$bucleIdiomas,true);
 $smarty->assign("buclePagos",$buclePagos,true);
 $smarty->assign("bucleModalidades",$bucleModalidades,true);
+$smarty->assign("errorLocalizado",$errorLocalizado,true);
 

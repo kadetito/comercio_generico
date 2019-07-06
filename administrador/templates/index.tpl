@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -34,7 +35,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     </head>
-    <body><div id="democon"></div>
+    <body>{$errorLocalizado}<div id="democon"></div>
 <div class="container">
 <form id="contact" name="form" action="#">
 <input type="hidden" name="accion" id="accion" value="altatienda"/>
@@ -72,8 +73,8 @@
             <input id="apellidos_cliente" name="apellidos_cliente" type="text" class="required">
             <label for="email_cliente">Email<div id="result-email"></div></label>
             <input id="email_cliente" name="email_cliente" type="text" class="required email">
-            <label for="dni_cliente">DNI/NIF</label>
-            <input id="dni_cliente" name="dni_cliente" type="text" value="" class="required">
+            <label for="dni_cliente">DNI/NIF <div id="result-dni"></div></label>
+            <input id="dni_cliente" name="dni_cliente" type="text" value=""  class="identificacionES required">
         </section>
         <h3><span class="texticon"><i class="fa fa-tasks"></i> Características</span><span class="icontext"><i class="fa fa-tasks fa-2x"></i></span></h3>
 
@@ -88,7 +89,7 @@
 
 
         <section><h4 class="displaywhen">Dominio y Servidor</h4>
-            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="" class="required" />
+            <label for="dominio">Dominio</label><input id="dominio" name="dominio" type="text"  value="43445454e" class="required" />
             <label for="protocolo_preferente">Protocolo preferente</label>
             <select id="protocolo_preferente" class="form-control required" name="protocolo_preferente">
 				<option value="http://">http://</option>
@@ -127,34 +128,22 @@
 </p>     
 </div>
 </div>
-
 </section>
-
  <h3><span class="texticon"><i class="fas fa-pencil-ruler"></i> Estructura</span><span class="icontext"><i class="fas fa-pencil-ruler fa-2x"></i></span></h3>
-
-
-
 <section><h4 class="displaywhen">Estructura</h4>
  <div class="row">
  <div class="col-md-12" >       
 <div class="row">
 <div class="col-md-4"></div>
-</div>        
-        
-        
+</div>              
 <div class="ex3">
 			{$bucleEstructurasCheckbox}
 </div>        
-
-
-
-
  </div>
 </div>
 </section>
 
  <h3><span class="texticon"><i class="fab fa-css3"></i> Estilos</span><span class="icontext"><i class="fab fa-css3  fa-2x"></i></span></h3>
-
 
 <section><h4 class="displaywhen">Estilos</h4>
  <div class="row">
@@ -162,22 +151,10 @@
 <div class="row">
 <div class="col-md-4"></div>
 </div>        
-        
-
-
-
-                    <div id="modelo"></div>
-
-
-
+   <div id="modelo"></div>
  </div>
 </div>
 </section>
-
-
-
-
-
  <h3><span class="texticon"><i class="far fa-thumbs-up"></i> Finalizar</span><span class="icontext"><i class="far fa-thumbs-up fa-2x"></i></span></h3>
 
 		<section><h4 class="displaywhen">Finalizar</h4>
@@ -187,16 +164,14 @@
 		</label>
 		</section>
     </div>
-
 </form>
 </div>
-
 		<script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js'></script>
 		<script src='javascript/jquery.steps.min.js'></script>
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
 		
-<script async  language="javascript">
+<script async>
 {literal}
 $(document).ready(function(){
 	$("input[name='id_estructura']").change(function(){	
@@ -254,6 +229,30 @@ $(document).ready(function(){
 		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
 		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		  xhttp.send ("email_cliente="+email_cliente);	 
+	    });              
+});  
+
+
+$(document).ready(function(){	
+	$("input[name='dni_cliente']").blur(function(){		       
+		 var xhttp = new XMLHttpRequest();
+		 dni_cliente=$(this).val();
+		  xhttp.onreadystatechange = function() {    
+		    if (this.readyState == 4 ) {
+				var devuelvodni = this.responseText;
+				if(devuelvodni == '1'){
+					$("input[name='dni_cliente']").val('');
+
+					document.getElementById("result-dni").innerHTML="<span class=\"alerta\">Este DNI ya dispone de una tienda</span>";
+				} else {
+					document.getElementById("result-dni").innerHTML="";
+
+				}
+		    }   
+		  };
+		  xhttp.open("POST", "workers/validausuarios.worker.php", true);
+		  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		  xhttp.send ("dni_cliente="+dni_cliente);	 
 	    });              
 });  
 
