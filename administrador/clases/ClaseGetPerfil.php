@@ -102,12 +102,13 @@ class ClaseGetPerfil {
                 throw new Exception($registro->error);
             } else {
                 return new self(
+                   
                     $registro['password_cliente'],
-                    $registro['usuario_cliente'],
+                    $usuario_cliente,
                     $registro['email_cliente'],
                     $registro['dni_cliente'],
                     $registro['apellidos_cliente'],
-                    $usuario_cliente,
+                    $registro['nombre_cliente'],
                     $registro['id_tienda'],
                     $registro['id_setuser']
                     );

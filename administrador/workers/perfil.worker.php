@@ -7,18 +7,14 @@ $Emailcliente='';
 $Usuariocliente='';
 $Passwordcliente='';
 $Fechaalta='';
-
-//si hay login
-if(isset($_SESSION["sessiousuari"]) || isset($_SESSION["sessiopassword"])){
-    echo $_SESSION["sessiousuari"];
-    echo $_SESSION["sessiopassword"];
-    $usuario = $_SESSION["sessiousuari"];
+$idcliente='';
     
     /**
      * OBTENGO DATOS DE CLIENTE
      * 
      */
     $get_comer = ClaseGetPerfil::consultaUsers($usuario);
+    $idcliente.=   $get_comer->getIdsetuserS();
     $nombrecliente.=   $get_comer->getNomClienteS();
     $apellidoscliente.=$get_comer->getApeClienteS();
     $dnicliente.=      $get_comer->getDNIClienteS();
@@ -26,12 +22,8 @@ if(isset($_SESSION["sessiousuari"]) || isset($_SESSION["sessiopassword"])){
     $Usuariocliente.=  $get_comer->getUsuarioclienteS();
     $Passwordcliente.= $get_comer->getPasswordclienteS();
 
-
-} else {
     
-   echo 'no hay sesion';//TODO redireccion y sweetalert
-}
-
+    
 //=========================================================
 // casteo las variables que se mostraran en el template
 //==========================================================
@@ -42,3 +34,4 @@ $smarty->assign("dnicliente",$dnicliente,true);
 $smarty->assign("Emailcliente",$Emailcliente,true);
 $smarty->assign("Usuariocliente",$Usuariocliente,true);
 $smarty->assign("Passwordcliente",$Passwordcliente,true);
+$smarty->assign("idcliente",$idcliente,true);

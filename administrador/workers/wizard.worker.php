@@ -205,7 +205,7 @@ $fecha_log = date('Y-m-d H:i:s');
         $get_InsertLog->insertLog();           
         
         $_SESSION['id_tien'] = $id_tien;//coloco la variable id tienda en sesion, la usare despues
-
+        $_SESSION['uid'] = 1;//creo una variable de sesion para determinar el login que vale 1
         //guardo los settings de usuario de esta tienda
         $get_SettingsUserTienda = new SettingsUserGenerica($dni_cliente,$email_cliente,$apellidos_cliente,$nombre_cliente,$password_cliente,$usuario_cliente,$id_tien);
         $get_SettingsUserTienda->inserSettingsUserTienda(); 

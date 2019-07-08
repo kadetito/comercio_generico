@@ -1,24 +1,24 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-04 22:08:58
+/* Smarty version 3.1.33, created on 2019-07-08 23:16:20
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d1e5cda65b1c2_27196528',
+  'unifunc' => 'content_5d23b2a492da10_08978310',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     '48fd99726bb1909bd1d4dff7188d124d6fba5902' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\index.tpl',
-      1 => 1562270522,
+      1 => 1562424304,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d1e5cda65b1c2_27196528 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d23b2a492da10_08978310 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -154,35 +154,23 @@ function content_5d1e5cda65b1c2_27196528 (Smarty_Internal_Template $_smarty_tpl)
 </p>     
 </div>
 </div>
-
 </section>
-
  <h3><span class="texticon"><i class="fas fa-pencil-ruler"></i> Estructura</span><span class="icontext"><i class="fas fa-pencil-ruler fa-2x"></i></span></h3>
-
-
-
 <section><h4 class="displaywhen">Estructura</h4>
  <div class="row">
  <div class="col-md-12" >       
 <div class="row">
 <div class="col-md-4"></div>
-</div>        
-        
-        
+</div>              
 <div class="ex3">
 			<?php echo $_smarty_tpl->tpl_vars['bucleEstructurasCheckbox']->value;?>
 
 </div>        
-
-
-
-
  </div>
 </div>
 </section>
 
  <h3><span class="texticon"><i class="fab fa-css3"></i> Estilos</span><span class="icontext"><i class="fab fa-css3  fa-2x"></i></span></h3>
-
 
 <section><h4 class="displaywhen">Estilos</h4>
  <div class="row">
@@ -190,22 +178,10 @@ function content_5d1e5cda65b1c2_27196528 (Smarty_Internal_Template $_smarty_tpl)
 <div class="row">
 <div class="col-md-4"></div>
 </div>        
-        
-
-
-
-                    <div id="modelo"></div>
-
-
-
+   <div id="modelo"></div>
  </div>
 </div>
 </section>
-
-
-
-
-
  <h3><span class="texticon"><i class="far fa-thumbs-up"></i> Finalizar</span><span class="icontext"><i class="far fa-thumbs-up fa-2x"></i></span></h3>
 
 		<section><h4 class="displaywhen">Finalizar</h4>
@@ -215,16 +191,14 @@ function content_5d1e5cda65b1c2_27196528 (Smarty_Internal_Template $_smarty_tpl)
 		</label>
 		</section>
     </div>
-
 </form>
 </div>
-
 		<script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js'></script>
 		<script src='javascript/jquery.steps.min.js'></script>
 		<script src="javascript/steps_form.js"></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
 		
-<script async  language="javascript">
+<script async>
 
 $(document).ready(function(){
 	$("input[name='id_estructura']").change(function(){	

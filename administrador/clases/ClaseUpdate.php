@@ -48,6 +48,24 @@ class ClaseUpdate {
             $consulta->execute();
             $conexion = null; //cierro conexion
         }
-    
+        
+        /**
+         *
+         *
+         */
+        public static function updateRegistroUsuario($id_tienda){
+            //             ChromePhp::log($id_tienda);
+            $conexion = new Conexion();
+            $conexion->exec("SET NAMES 'utf8'");
+            
+            $consulta = $conexion->prepare('UPDATE generica_tienda SET
+                    tienda_activa  = "S"
+                       WHERE id_tienda = :id_tienda');
+            
+            $consulta->bindParam(':id_tienda', $id_tienda);
+            $consulta->execute();
+            $conexion = null; //cierro conexion
+        }
+        
         
 }

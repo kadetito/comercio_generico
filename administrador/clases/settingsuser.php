@@ -138,11 +138,44 @@ class SettingsUserGenerica {
         
         /**
          * CONSULTA login
-         *
+         *MANUAL
          * @return number[]
          */
         
-        public static function consultaLogin($freshtoknRight){ 
+        public static function consultaLoginManual($username,$password){ 
+            $conexion = new conexion();
+            $conexion->exec("SET NAMES 'utf8'");
+            $query = "select * from generica_settings_user where usuario_cliente=:username and password_cliente=:password";
+            $stmt = $conexion->prepare($query);
+            $stmt->bindParam('username', $username, PDO::PARAM_STR);
+            $stmt->bindValue('password', $password, PDO::PARAM_STR);
+            $stmt->execute();
+            $count = $stmt->rowCount();
+            $registro   = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($registro){
+                return new self(
+                    $registro['dni_cliente'],
+                    $registro['email_cliente'],
+                    $registro['apellidos_cliente'],
+                    $registro['nombre_cliente'],
+                    $password,
+                    $username,
+                    $registro['id_tienda'],
+                    $registro['id_setuser']);
+            } else {
+                return false;
+            }
+        }
+        
+        
+        /**
+         * CONSULTA login
+         * AUTO
+         * @return number[]
+         */
+        
+        public static function consultaLogin($freshtoknRight){
             $conexion = new conexion();
             $conexion->exec("SET NAMES 'utf8'");
             $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE dni_cliente = :dni_cliente ");
@@ -158,6 +191,34 @@ class SettingsUserGenerica {
                     $registro['usuario_cliente'],
                     $registro['id_tienda'],
                     $registro['id_setuser']);
+            } else {
+                return false;
+            }
+        }
+
+        /**
+         * CONSULTA login
+         * CAMBIOS
+         * @return number[]
+         */
+        
+        public static function consultaLoginCambios($id_setuser){
+            $conexion = new conexion();
+            $conexion->exec("SET NAMES 'utf8'");
+            $consulta = $conexion->prepare("SELECT * FROM " . self::TABLA . " WHERE id_setuser = :id_setuser");
+            $consulta->execute(array(':id_setuser' => $id_setuser));
+
+            $registro = $consulta->fetch();
+            if($registro){
+                return new self(
+                    $registro['dni_cliente'],
+                    $registro['email_cliente'],
+                    $registro['apellidos_cliente'],
+                    $registro['nombre_cliente'],
+                    $registro['password_cliente'],
+                    $registro['usuario_cliente'],
+                    $registro['id_tienda'],
+                    $id_setuser);
             } else {
                 return false;
             }
