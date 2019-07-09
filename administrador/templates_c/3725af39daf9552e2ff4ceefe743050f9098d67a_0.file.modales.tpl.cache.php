@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-08 23:20:55
+/* Smarty version 3.1.33, created on 2019-07-09 16:34:43
   from 'C:\AppServ\www\comercio_generico\administrador\templates\modales.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d23b3b7569d07_82260264',
+  'unifunc' => 'content_5d24a6039d5963_59210411',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d23b3b7569d07_82260264 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '4303106165d23b3b755e155_95304199';
+function content_5d24a6039d5963_59210411 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '20895622515d24a6039cdc90_23718156';
 ?>
 <div class="modal fade  " id="mc-01" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg" role="document">

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-08 23:16:20
+/* Smarty version 3.1.33, created on 2019-07-09 16:33:08
   from 'C:\AppServ\www\comercio_generico\administrador\templates\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d23b2a4a4ee54_55330751',
+  'unifunc' => 'content_5d24a5a45109b9_05231278',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d23b2a4a4ee54_55330751 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '9513131315d23b2a49f4de7_28009637';
+function content_5d24a5a45109b9_05231278 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '7650746065d24a5a44ab045_06507972';
 ?>
 <!DOCTYPE html>
 <html>

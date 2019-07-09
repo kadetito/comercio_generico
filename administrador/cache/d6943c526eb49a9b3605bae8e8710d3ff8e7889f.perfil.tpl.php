@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-08 23:20:55
+/* Smarty version 3.1.33, created on 2019-07-09 16:34:43
   from 'C:\AppServ\www\comercio_generico\administrador\templates\perfil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d23b3b75a0a26_12390297',
+  'unifunc' => 'content_5d24a6039f4ec4_77262351',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -18,7 +18,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'ecfbe83b4c6a7157e58c9881e137200a6bdc70b7' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\navbar.tpl',
-      1 => 1562424332,
+      1 => 1562682677,
       2 => 'file',
     ),
     '3725af39daf9552e2ff4ceefe743050f9098d67a' => 
@@ -30,7 +30,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d23b3b75a0a26_12390297 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d24a6039f4ec4_77262351 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -89,22 +89,8 @@ function content_5d23b3b75a0a26_12390297 (Smarty_Internal_Template $_smarty_tpl)
 				 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="navbar-toggler-icon"></span>
-				</button> <a class="navbar-brand" href="#">Brand</a>
+				</button> <a class="navbar-brand" href="#">Administrador</a>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							 <a class="nav-link" href="#">Link <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item active">
-							 <a class="nav-link " href="#">Link</a>
-						</li>
-					</ul>
-					<form class="form-inline">
-						<input class="form-control mr-sm-2" type="text" /> 
-						<button class="btn btn-primary my-2 my-sm-0" type="submit">
-							Search
-						</button>
-					</form>
 					<ul class="navbar-nav ml-md-auto">
 						<li class="nav-item dropdown">
 							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbaMenuPerfil" data-toggle="dropdown"><?php echo $_smarty_tpl->tpl_vars['nombrecliente']->value;?>

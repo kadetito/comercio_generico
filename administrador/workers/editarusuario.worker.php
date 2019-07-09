@@ -23,7 +23,7 @@ if (empty($_POST['idcliente']) || empty($_POST['dniclient']) || empty($_POST['us
     || empty($_POST['emailclient']) || empty($_POST['usuaripass'])){
     $errors[] = "Todos los campos son obligatorios.";
     ChromePhp::log($errors[]);
-} else {
+} elseif (!empty($_POST['idcliente'])){
 
 
     $id_setuser=intval($idcliente);

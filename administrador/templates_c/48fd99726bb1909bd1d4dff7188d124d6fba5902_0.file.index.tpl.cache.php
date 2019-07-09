@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-08 23:16:20
+/* Smarty version 3.1.33, created on 2019-07-09 16:33:08
   from 'C:\AppServ\www\comercio_generico\administrador\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d23b2a490e418_68881781',
+  'unifunc' => 'content_5d24a5a4357092_82932554',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d23b2a490e418_68881781 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '7685604735d23b2a48a4db7_41912230';
+function content_5d24a5a4357092_82932554 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '10630267085d24a5a42dde31_64700141';
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,8 +68,8 @@ $_smarty_tpl->compiled->nocache_hash = '7685604735d23b2a48a4db7_41912230';
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     </head>
-    <body><?php echo '/*%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/<?php echo $_smarty_tpl->tpl_vars[\'errorLocalizado\']->value;?>
-/*/%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/';?>
+    <body><?php echo '/*%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/<?php echo $_smarty_tpl->tpl_vars[\'errorLocalizado\']->value;?>
+/*/%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/';?>
 <div id="democon"></div>
 <div class="container">
 <form id="contact" name="form" action="#">
@@ -84,15 +84,15 @@ $_smarty_tpl->compiled->nocache_hash = '7685604735d23b2a48a4db7_41912230';
             
             <select id="id_tipotienda"  placeholder="" name="id_tipotienda" class="form-control required">
             <option value="">Seleccione el tipo de comercio</option>
-            <?php echo '/*%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
-/*/%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/';?>
+            <?php echo '/*%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposTiendaCheckbox\']->value;?>
+/*/%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/';?>
 
             </select>
         <h4>Idiomas</h4>
         <div class="form-group idioms">
 			<ul class="unstyled centered">
-            <?php echo '/*%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
-/*/%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/';?>
+            <?php echo '/*%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleIdiomasCheckbox\']->value;?>
+/*/%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/';?>
 
             </ul>
          </div>
@@ -119,12 +119,12 @@ $_smarty_tpl->compiled->nocache_hash = '7685604735d23b2a48a4db7_41912230';
 
         <section><h4 class="displaywhen">Características</h4>
         <h4>Escoje qué características tendrán los productos de la tienda</h4>
-        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
-/*/%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/';?>
+        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleModalidadesCheckbox\']->value;?>
+/*/%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/';?>
 </ul>
         <h4>Escoje los tipos de pago que usarás</h4>
-        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
-/*/%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/';?>
+        <ul class="unstyled centered"><?php echo '/*%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleTiposPagoCheckbox\']->value;?>
+/*/%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/';?>
 </ul>
 
         </section>
@@ -180,8 +180,8 @@ $_smarty_tpl->compiled->nocache_hash = '7685604735d23b2a48a4db7_41912230';
 <div class="col-md-4"></div>
 </div>              
 <div class="ex3">
-			<?php echo '/*%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
-/*/%%SmartyNocache:7685604735d23b2a48a4db7_41912230%%*/';?>
+			<?php echo '/*%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/<?php echo $_smarty_tpl->tpl_vars[\'bucleEstructurasCheckbox\']->value;?>
+/*/%%SmartyNocache:10630267085d24a5a42dde31_64700141%%*/';?>
 
 </div>        
  </div>

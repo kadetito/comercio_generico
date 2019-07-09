@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-08 23:20:55
+/* Smarty version 3.1.33, created on 2019-07-09 16:34:43
   from 'C:\AppServ\www\comercio_generico\administrador\templates\perfil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d23b3b74f8979_01213048',
+  'unifunc' => 'content_5d24a60398b579_35147332',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -22,8 +22,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:modales.tpl' => 1,
   ),
 ),false)) {
-function content_5d23b3b74f8979_01213048 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '1252926455d23b3b7455b04_36313677';
+function content_5d24a60398b579_35147332 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '828088575d24a603912128_21124511';
 ?>
 <!DOCTYPE html>
 <html>
@@ -124,17 +124,17 @@ $_smarty_tpl->compiled->nocache_hash = '1252926455d23b3b7455b04_36313677';
 						<div class="row">
 							<div class="col-md-6">
 								<ul class="card-text">
-								<input type="hidden" name="idcliente" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'idcliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								<input type="hidden" name="idcliente" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'idcliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" />
-								    <li><label for="nomclient">Nombre</label><input required type="text" name="nomclient" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombrecliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								    <li><label for="nomclient">Nombre</label><input required type="text" name="nomclient" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombrecliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" /></li>  
-								    <li><label for="dniclient">DNI/NIF</label><input required  type="text" name="dniclient" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'dnicliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								    <li><label for="dniclient">DNI/NIF</label><input required  type="text" name="dniclient" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'dnicliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" /></li>  
-								    <li><label for="usuarinom">Usuari</label><input required  type="text" name="usuarinom" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'Usuariocliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								    <li><label for="usuarinom">Usuari</label><input required  type="text" name="usuarinom" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'Usuariocliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" /></li>  
 					
 								 </ul>
@@ -142,14 +142,14 @@ $_smarty_tpl->compiled->nocache_hash = '1252926455d23b3b7455b04_36313677';
 						
 							<div class="col-md-6">
 								<ul class="card-text">
-								    <li><label for="cognomsclient">Apellidos</label><input required  type="text" name="cognomsclient" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'apellidoscliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								    <li><label for="cognomsclient">Apellidos</label><input required  type="text" name="cognomsclient" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'apellidoscliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" /></li>  
-								    <li><label for="emailclient">E-mail</label><input required  type="email" name="emailclient" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'Emailcliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								    <li><label for="emailclient">E-mail</label><input required  type="email" name="emailclient" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'Emailcliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" /></li>  
-								    <li><label for="usuaripass">Password</label><input  required type="text" name="usuaripass" value="<?php echo '/*%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/<?php echo $_smarty_tpl->tpl_vars[\'Passwordcliente\']->value;?>
-/*/%%SmartyNocache:1252926455d23b3b7455b04_36313677%%*/';?>
+								    <li><label for="usuaripass">Password</label><input  required type="text" name="usuaripass" value="<?php echo '/*%%SmartyNocache:828088575d24a603912128_21124511%%*/<?php echo $_smarty_tpl->tpl_vars[\'Passwordcliente\']->value;?>
+/*/%%SmartyNocache:828088575d24a603912128_21124511%%*/';?>
 " class="form-control" /></li>  
 					
 								 </ul>
