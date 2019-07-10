@@ -96,7 +96,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<ul class="card-text">
-								<input type="hidden" name="idcliente" value="{$idcliente}" class="form-control" />
+								<input type="hidden" name="idcliente" id="idcliente" value="{$idcliente}" class="form-control" />
 								    <li><label for="nomclient">Nombre</label><input required type="text" name="nomclient" value="{$nombrecliente}" class="form-control" /></li>  
 								    <li><label for="dniclient">DNI/NIF</label><input required  type="text" name="dniclient" value="{$dnicliente}" class="form-control" /></li>  
 								    <li><label for="usuarinom">Usuari</label><input required  type="text" name="usuarinom" value="{$Usuariocliente}" class="form-control" /></li>  
@@ -256,6 +256,7 @@
 		<script src="javascript/bootstrap.min.js"></script>
 		<script src='javascript/jquery.validate.js'></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
+		<script src="javascript/callbacks.js"></script>
 		<script>
 		$('#myTab a').click(function(e) {
 		  e.preventDefault();
@@ -299,28 +300,7 @@
 				$('#mc-11').on('hidden.bs.modal', function () {parent.location.reload();});
 			});
 			
-			$(document).ready(function(){
 
-				 $('#m-01').click(function(){
-				   var id = "1";
-				   var splitid = id.split('_');
-				   var userid = splitid[1];
-				   $.ajax({
-				    url: 'test.php',
-				    type: 'POST',
-				    data: {userid: userid},
-				    success: function(response){ 
-				      $('.modal-body').html(response);
-				      $('#mc-01').modal('show'); 
-				    },
-			        error:function(request, status, error) {
-			            console.log("ajax call went wrong:" + request.responseText);
-			        }
-				  });
-				 });
-			});
-
-			
 			
 			$(document).ready(function(){
 				$("#edit_product").submit(function(event) {

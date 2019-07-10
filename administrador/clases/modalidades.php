@@ -59,8 +59,9 @@ class Modalidades {
         $total = $conexion->query("SELECT FOUND_ROWS() as total")->fetch()['total'];
         return [ $registros ];
     }
+
     
-   
+    
     
     //**
     // OBTENER DETALLE
@@ -303,3 +304,71 @@ class ModalidadesGenerica {
     
     
 }
+
+
+
+
+
+class ModalidadesJoined {
+    
+    //defino las propiedades
+    private $id_modali;
+    
+    const TABLA = 'definicion_modalidades'; //constante del nombre de la tabla
+    
+    //metodos getters y setters
+    public function getId(){
+        return $this->id_modali;
+    }
+    public function getNombre(){
+        return $this->nombre_modalidad;
+    }
+    
+    
+    public function setId(){
+        $this->id_modali = $id_modali;
+    }
+    public function setNombre(){
+        $this->nombre_modalidad = $nombre_modalidad;
+    }
+    
+    
+    //constructor
+    public function __construct($nombre_modalidad,$id_modali=null)
+    {
+        $this->id_modali = $id_modali;
+        $this->nombre_modalidad = $nombre_modalidad;
+        
+    }
+    
+    /**
+     * CONSULTA SIN FORMATO
+     * 
+     * @return number[]
+     */
+    public static function consultaSinFormatoSelectIdTienda($idTienda){
+        $conexion = new conexion();//objeto conexion
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare("
+
+SELECT DISTINCT B.id_modali,* FROM definicion_modalidades A
+								INNER JOIN generica_modalidades B ON B.id_modali=A.id_modali
+								WHERE B.id_tienda != :idTienda;
+
+
+                          ");//uso la constante TABLA
+        $consulta->bindParam(':idTienda',$idTienda);
+        $consulta->execute();
+        $registros = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        $total = $conexion->query("SELECT FOUND_ROWS() as total")->fetch()['total'];
+        return [ $registros ];
+    }
+    
+    
+    
+    
+    
+    
+    
+}
+

@@ -3,7 +3,7 @@ html, body {
   font-family: 'Open Sans', sans-serif;
 }
 
-
+.sinlence{color:#666666;font-style:italic;font-size:11px;margin-top:15px;}
 .error {
       color: red !important;
      font-weight:bold;

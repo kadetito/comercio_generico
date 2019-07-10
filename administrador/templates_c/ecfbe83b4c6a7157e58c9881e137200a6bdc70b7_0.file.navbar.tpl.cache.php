@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-09 16:34:43
+/* Smarty version 3.1.33, created on 2019-07-09 19:59:44
   from 'C:\AppServ\www\comercio_generico\administrador\templates\navbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d24a6039b6663_21537445',
+  'unifunc' => 'content_5d24d610c89ab7_07486532',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d24a6039b6663_21537445 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '302017255d24a6039ae820_81946152';
+function content_5d24d610c89ab7_07486532 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '12837536615d24d610c7c7f0_80786222';
 ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark fixed-top">
@@ -32,10 +32,10 @@ $_smarty_tpl->compiled->nocache_hash = '302017255d24a6039ae820_81946152';
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="navbar-nav ml-md-auto">
 						<li class="nav-item dropdown">
-							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbaMenuPerfil" data-toggle="dropdown"><?php echo '/*%%SmartyNocache:302017255d24a6039ae820_81946152%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombrecliente\']->value;?>
-/*/%%SmartyNocache:302017255d24a6039ae820_81946152%%*/';?>
- <?php echo '/*%%SmartyNocache:302017255d24a6039ae820_81946152%%*/<?php echo $_smarty_tpl->tpl_vars[\'apellidoscliente\']->value;?>
-/*/%%SmartyNocache:302017255d24a6039ae820_81946152%%*/';?>
+							 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbaMenuPerfil" data-toggle="dropdown"><?php echo '/*%%SmartyNocache:12837536615d24d610c7c7f0_80786222%%*/<?php echo $_smarty_tpl->tpl_vars[\'nombrecliente\']->value;?>
+/*/%%SmartyNocache:12837536615d24d610c7c7f0_80786222%%*/';?>
+ <?php echo '/*%%SmartyNocache:12837536615d24d610c7c7f0_80786222%%*/<?php echo $_smarty_tpl->tpl_vars[\'apellidoscliente\']->value;?>
+/*/%%SmartyNocache:12837536615d24d610c7c7f0_80786222%%*/';?>
 </a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbaMenuPerfil">
 								 <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>

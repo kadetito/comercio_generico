@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-09 16:34:43
+/* Smarty version 3.1.33, created on 2019-07-09 19:59:44
   from 'C:\AppServ\www\comercio_generico\administrador\templates\perfil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d24a6039f4ec4_77262351',
+  'unifunc' => 'content_5d24d610d09308_05640867',
   'has_nocache_code' => true,
   'file_dependency' => 
   array (
     'd15280d0e6a048c70ab97694da80cca3e118d6f3' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\perfil.tpl',
-      1 => 1562620851,
+      1 => 1562685908,
       2 => 'file',
     ),
     'ecfbe83b4c6a7157e58c9881e137200a6bdc70b7' => 
@@ -24,13 +24,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '3725af39daf9552e2ff4ceefe743050f9098d67a' => 
     array (
       0 => 'C:\\AppServ\\www\\comercio_generico\\administrador\\templates\\modales.tpl',
-      1 => 1562458236,
+      1 => 1562691391,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => 120,
 ),true)) {
-function content_5d24a6039f4ec4_77262351 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d24d610d09308_05640867 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
     <head>
@@ -152,7 +152,7 @@ function content_5d24a6039f4ec4_77262351 (Smarty_Internal_Template $_smarty_tpl)
 						<div class="row">
 							<div class="col-md-6">
 								<ul class="card-text">
-								<input type="hidden" name="idcliente" value="<?php echo $_smarty_tpl->tpl_vars['idcliente']->value;?>
+								<input type="hidden" name="idcliente" id="idcliente" value="<?php echo $_smarty_tpl->tpl_vars['idcliente']->value;?>
 " class="form-control" />
 								    <li><label for="nomclient">Nombre</label><input required type="text" name="nomclient" value="<?php echo $_smarty_tpl->tpl_vars['nombrecliente']->value;?>
 " class="form-control" /></li>  
@@ -308,12 +308,33 @@ function content_5d24a6039f4ec4_77262351 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 <div class="modal fade  " id="mc-01" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
+					<div class="modal-content p-5">
 						<div class="modal-header">
-							<h5 class="modal-title" id="myModalLabel">Modal title</h5> 
+							<h5 class="modal-title" id="myModalLabel">Unidades aplicables</h5> 
 							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times</span></button>
 						</div>
-						<div class="modal-body"></div>
+						<div class="modal-body">
+						<p class="sinlence">Estas son las unidades de medida y volumen de las que dispone ahora su tienda/web, puede eliminarlas, <strong>PERO CUIDADO</strong>, los productos asociados a esta unidad quedar&aacute;n sin los valores de los que ya disponen.</p>
+							<table class="table table-hover table-sm table-bordered">
+								<thead>
+									<tr>
+										<th>Product</th>
+										<th>Payment Taken</th>
+									</tr>
+								</thead>
+								<tbody id="modal-01"></tbody>
+							</table>
+						<form role="form" class="form-inline ">
+						<p class="sinlence">Puede asignar m&aacute;s unidades de medida y/o volumen. Escoja las unidades de medida o volumen que va a utilizar en sus productos, podr&aacute; definirlos en cada uno de ellos luego</p>
+								<div class="form-group">
+									<label for="id_modali" class="mr-sm-2">Nueva unidad de uso</label>
+									<select name="id_modali" class="form-control mr-sm-2"" id="id_modali" required>
+									<option value="">Seleccione unidad de medida y/o volumen</option><?php echo $_smarty_tpl->tpl_vars['bucleModalidadesSelect']->value;?>
+</select> 
+								</div>
+								<input type="submit" class="btn btn-primary" name="sendModali" />
+						</form>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -395,6 +416,7 @@ function content_5d24a6039f4ec4_77262351 (Smarty_Internal_Template $_smarty_tpl)
 		<script src="javascript/bootstrap.min.js"></script>
 		<script src='javascript/jquery.validate.js'></script>
 		<script src="javascript/jquery.cookie-1.3.1.js"></script>
+		<script src="javascript/callbacks.js"></script>
 		<script>
 		$('#myTab a').click(function(e) {
 		  e.preventDefault();
@@ -438,28 +460,7 @@ function content_5d24a6039f4ec4_77262351 (Smarty_Internal_Template $_smarty_tpl)
 				$('#mc-11').on('hidden.bs.modal', function () {parent.location.reload();});
 			});
 			
-			$(document).ready(function(){
 
-				 $('#m-01').click(function(){
-				   var id = "1";
-				   var splitid = id.split('_');
-				   var userid = splitid[1];
-				   $.ajax({
-				    url: 'test.php',
-				    type: 'POST',
-				    data: {userid: userid},
-				    success: function(response){ 
-				      $('.modal-body').html(response);
-				      $('#mc-01').modal('show'); 
-				    },
-			        error:function(request, status, error) {
-			            console.log("ajax call went wrong:" + request.responseText);
-			        }
-				  });
-				 });
-			});
-
-			
 			
 			$(document).ready(function(){
 				$("#edit_product").submit(function(event) {

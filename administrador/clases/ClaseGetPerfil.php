@@ -116,6 +116,37 @@ class ClaseGetPerfil {
     }
     
     /**
+     * obtener usuarios por ID
+     */
+    
+    public static function consultaUsersPorId($idcliente){
+        $conexion = new conexion();
+        $conexion->exec("SET NAMES 'utf8'");
+        $consulta = $conexion->prepare("SELECT * FROM generica_settings_user WHERE id_setuser= :idcliente ");
+        $consulta->execute(array(':idcliente' => $idcliente));
+        $registro = $consulta->fetch();
+        
+        
+        if ($registro === false) {
+            throw new Exception($registro->error);
+        } else {
+            return new self(
+                
+                $registro['password_cliente'],
+                $registro['usuario_cliente'],
+                $registro['email_cliente'],
+                $registro['dni_cliente'],
+                $registro['apellidos_cliente'],
+                $registro['nombre_cliente'],
+                $registro['id_tienda'],
+                $idcliente
+                );
+        }
+    }
+    
+    
+    
+    /**
      * obtener emails
      */
     

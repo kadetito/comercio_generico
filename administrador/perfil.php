@@ -32,6 +32,7 @@ require ("includes/sesion.php");
      require (ROOT_DIR.'/clases/estructuras.php');
      require (ROOT_DIR.'/clases/estilos.php');
      require (ROOT_DIR.'/clases/ClaseGetPerfil.php');
+     require (ROOT_DIR.'/clases/ClaseGetModalidades.php');
 // //WORKERS----------------------------------------------------------  
     require (ROOT_DIR.'/workers/perfil.worker.php');
 
